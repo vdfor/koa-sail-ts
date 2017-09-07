@@ -1,0 +1,16 @@
+{
+  "appenders": {
+    "sail": {
+      "type": "file",
+      "filename": "./logs/log"
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "sail"
+      ],
+      "level": "info"
+    }
+  }
+}
