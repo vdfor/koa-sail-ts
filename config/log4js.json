@@ -2,7 +2,9 @@
   "appenders": {
     "sail": {
       "type": "file",
-      "filename": "./logs/log"
+      "filename": "./logs/log",
+      "maxLogSize": 20480,
+      "backups": 4
     }
   },
   "categories": {

@@ -35,8 +35,9 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
     log.info(`${ctx.method} ${ctx.url} - ${ms}ms`)
   } catch (error) {
-    console.log(error)
+    console.error(error)
     log.error(error)
+    throw error
   }
 })
 
