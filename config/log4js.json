@@ -1,7 +1,7 @@
 {
   "appenders": {
     "sail": {
-      "type": "file",
+      "type": "console",
       "filename": "./logs/log",
       "maxLogSize": 20480,
       "backups": 4
