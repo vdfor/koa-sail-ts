@@ -13,9 +13,9 @@
   },
   "homepage": "https://github.com/WatermelonFruit/koa_sail#readme",
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "nohup node bin/www &",
+    "start": "NODE_ENV=development node bin/www",
+    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
+    "prd": "NODE_ENV=production nohup node bin/www &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

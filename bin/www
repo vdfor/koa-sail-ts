@@ -27,7 +27,7 @@ var logger = require('../logger');
  */
 
 server.listen(port, function () {
-  logger('startup').info('Express server listening on port ', server.address().port, " with pid ", process.pid);
+  logger('startup').info('Server listening on port ', server.address().port, " with pid ", process.pid);
 });
 server.on('error', onError);
 server.on('listening', onListening);
