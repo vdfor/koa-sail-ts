@@ -1,15 +1,16 @@
 const Koa = require('koa')
-
-const app = new Koa()
-const views = require('koa-views')
 const json = require('koa-json')
+const render = require('koa-ejs')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
+const statics = require('koa-static')
+const path = require('path')
+
+const app = new Koa()
 // log4js
 const logger = require('./logger')('app')
-
-const index = require('./routes/index')
-const users = require('./routes/users')
+// api
+const test = require('./api/test')
 
 // error handler
 onerror(app)
@@ -18,12 +19,26 @@ onerror(app)
 app.use(bodyparser({
   enableTypes: ['json', 'form', 'text']
 }))
+// json
 app.use(json())
-app.use(require('koa-static')(`${__dirname}/public`))
+// static
+app.use(statics(path.join(__dirname, './public')))
 
-app.use(views(`${__dirname}/views`, {
-  extension: 'pug'
-}))
+// config render
+render(app, {
+  root: path.join(__dirname, 'views'),
+  layout: false,
+  viewExt: 'html',
+  cache: false,
+  debug: true
+})
+
+// render html
+app.use(require('koa-router')().get('/', async (ctx) => {
+  await ctx.render('index')
+}).get('/about', async (ctx) => {
+  await ctx.render('about')
+}).middleware())
 
 // logger
 app.use(async (ctx, next) => {
@@ -38,8 +53,7 @@ app.use(async (ctx, next) => {
   }
 })
 
-// routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
+// api
+app.use(test.routes(), test.allowedMethods())
 
 module.exports = app
