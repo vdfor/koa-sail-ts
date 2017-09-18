@@ -13,9 +13,8 @@
   },
   "homepage": "https://github.com/WatermelonFruit/koa_sail#readme",
   "scripts": {
-    "start": "NODE_ENV=development node bin/www",
-    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
-    "prd": "NODE_ENV=production nohup node bin/www &",
+    "start": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
+    "prduction": "NODE_ENV=production nohup node bin/www &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -28,9 +27,12 @@
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
     "log4js": "^2.3.3",
-    "pug": "^2.0.0-rc.1"
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
+    "eslint": "^4.7.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
     "nodemon": "^1.8.1"
   }
 }
