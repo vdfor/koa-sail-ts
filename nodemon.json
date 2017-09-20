@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    ".svn",
+    "node_modules/"
+  ],
+  "verbose": true,
+  "watch": ["api", "config", "bin", "app.js", "logger.js"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}
