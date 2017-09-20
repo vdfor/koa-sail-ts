@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const compress = require('koa-compress')
 const json = require('koa-json')
 const render = require('koa-ejs')
 const onerror = require('koa-onerror')
@@ -19,8 +20,20 @@ onerror(app)
 app.use(bodyparser({
   enableTypes: ['json', 'form', 'text']
 }))
+
+// compress
+app.use(compress({
+  filter(contentType) {
+    // html css / js
+    return /text/i.test(contentType) || /javascript/i.test(contentType)
+  },
+  threshold: 1024, // 1kb
+  flush: require('zlib').Z_SYNC_FLUSH
+}))
+
 // json
 app.use(json())
+
 // static
 app.use(statics(path.join(__dirname, './public')))
 
