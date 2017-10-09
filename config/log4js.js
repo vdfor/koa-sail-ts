@@ -2,10 +2,7 @@ module.exports = {
   development: {
     appenders: {
       sail: {
-        type: 'console',
-        filename: './logs/log',
-        maxLogSize: 20480,
-        backups: 4
+        type: 'console'
       }
     },
     categories: {
@@ -22,7 +19,7 @@ module.exports = {
       sail: {
         type: 'file',
         filename: './logs/log',
-        maxLogSize: 20480,
+        maxLogSize: 1024 * 1024 * 20, // 20m
         backups: 4
       }
     },
