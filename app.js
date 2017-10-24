@@ -6,6 +6,7 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const statics = require('koa-static')
 const path = require('path')
+const cors = require('@koa/cors')
 
 const app = new Koa()
 // log4js
@@ -15,6 +16,11 @@ const test = require('./api/test')
 
 // error handler
 onerror(app)
+
+// cors
+app.use(cors({
+  origin: 'http://127.0.0.1:8080'
+}))
 
 // middlewares
 app.use(bodyparser({
