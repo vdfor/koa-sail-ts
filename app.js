@@ -1,78 +1,80 @@
-const Koa = require('koa')
-const compress = require('koa-compress')
-const json = require('koa-json')
-const render = require('koa-ejs')
-const onerror = require('koa-onerror')
-const bodyparser = require('koa-bodyparser')
-const statics = require('koa-static')
-const path = require('path')
-const cors = require('@koa/cors')
+const Koa = require('koa');
+const compress = require('koa-compress');
+const json = require('koa-json');
+const render = require('koa-ejs');
+const send = require('koa-send');
+const onerror = require('koa-onerror');
+const bodyparser = require('koa-bodyparser');
+const statics = require('koa-static');
+const path = require('path');
 
-const app = new Koa()
+// app
+const app = new Koa();
+
 // log4js
-const logger = require('./logger')('app')
+const logger = require('./common/logger')('app');
+
 // api
-const test = require('./api/test')
+const test = require('./api/test');
 
 // error handler
-onerror(app)
-
-// cors
-app.use(cors({
-  origin: 'http://127.0.0.1:8080'
-}))
+onerror(app);
 
 // middlewares
 app.use(bodyparser({
+  // multipart: true,
   enableTypes: ['json', 'form', 'text']
-}))
+}));
 
 // compress
 app.use(compress({
   filter(contentType) {
-    // html css / js
-    return /text/i.test(contentType) || /javascript/i.test(contentType)
+    // html css / js / json
+    return /text|javascript|json/i.test(contentType);
   },
-  threshold: 1024, // 1kb
+  threshold: 1024, // 大于1kb开启压缩
   flush: require('zlib').Z_SYNC_FLUSH
-}))
+}));
 
 // json
-app.use(json())
+app.use(json());
 
 // static
-app.use(statics(path.join(__dirname, './public')))
+app.use(statics(path.join(__dirname, './web_dist')));
 
 // config render
 render(app, {
-  root: path.join(__dirname, 'views'),
+  root: path.join(__dirname, './web_dist'),
   layout: false,
   viewExt: 'html',
   cache: false,
   debug: true
-})
-
-// render html
-app.use(require('koa-router')().get('/', async (ctx) => {
-  await ctx.render('index')
-}).get('/about', async (ctx) => {
-  await ctx.render('about')
-}).middleware())
+});
 
 // logger
 app.use(async (ctx, next) => {
   try {
-    const start = new Date()
-    await next()
-    const ms = new Date() - start
-    logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`)
+    const start = new Date();
+    await next();
+    const ms = new Date() - start;
+    logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
   } catch (error) {
-    logger.error(error)
-    throw error
+    logger.error(error);
+    throw error;
   }
-})
+});
 
-// api
-app.use(test.routes(), test.allowedMethods())
+// api 若是api,则后端处理
+app.use(test.routes(), test.allowedMethods());
 
-module.exports = app
+// 非api/public下 路由交由前端处理,后端不处理路由 render html
+app.use(require('koa-router')().get(/\/downloads\/*/, async (ctx) => {
+  // send file
+  // public为根目录,包含downloads目录
+  await send(ctx, ctx.path, { root: path.join(__dirname, './public') });
+}).get('*', async (ctx) => {
+  // 其他情况全部交由前端处理
+  await ctx.render('index');
+}).middleware());
+
+module.exports = app;

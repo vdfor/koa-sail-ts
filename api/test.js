@@ -1,17 +1,11 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
 
-router.prefix('/api/v0/test')
+router.prefix('/api/v0/test');
 
-router.get('/', (ctx) => {
+router.get('/', async (ctx) => {
   ctx.body = {
-    test: 'test'
-  }
-})
+    result: 'test'
+  };
+});
 
-router.get('/data', (ctx) => {
-  ctx.body = {
-    data: ['test1', 'test2']
-  }
-})
-
-module.exports = router
+module.exports = router;

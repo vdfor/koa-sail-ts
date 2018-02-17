@@ -3,10 +3,11 @@
   "ignore": [
     ".git",
     ".svn",
-    "node_modules/"
+    "/logs",
+    "/public",
+    "node_modules/**/node_modules"
   ],
   "verbose": true,
-  "watch": ["api", "config", "bin", "app.js", "logger.js"],
   "env": {
     "NODE_ENV": "development"
   },

@@ -1,38 +1,39 @@
 {
-  "name": "koa_sail",
-  "version": "0.1.0",
-  "description": "koa_sail",
-  "author": "WatermelonFruit",
+  "name": "koa-sail",
+  "version": "0.2.0",
+  "author": "vdfor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/WatermelonFruit/koa_sail.git"
+    "url": "https://github.com/vdfor/koa-sail.git"
   },
   "bugs": {
-    "url": "https://github.com/WatermelonFruit/koa_sail/issues"
+    "url": "https://github.com/vdfor/koa-sail/issues"
   },
-  "homepage": "https://github.com/WatermelonFruit/koa_sail#readme",
+  "homepage": "https://github.com/vdfor/koa-sail#readme",
+  "private": true,
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/nodemon bin/www",
-    "prod": "NODE_ENV=production pm2 start --name koa_sail bin/www",
+    "start": "NODE_ENV=development nodemon bin/www",
+    "prod": "NODE_ENV=production pm2 start --name koaSail bin/www",
+    "prod_docker": "NODE_ENV=production node bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@koa/cors": "^2.2.1",
-    "koa": "^2.2.0",
-    "koa-bodyparser": "^3.2.0",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
     "koa-compress": "^2.0.0",
     "koa-ejs": "^4.1.0",
     "koa-json": "^2.0.2",
-    "koa-onerror": "^1.2.1",
-    "koa-router": "^7.1.1",
-    "koa-static": "^3.0.0",
-    "log4js": "^2.3.3"
+    "koa-onerror": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^4.1.3",
+    "koa-static": "^4.0.2",
+    "log4js": "^2.5.3"
   },
   "devDependencies": {
-    "eslint": "^4.7.0",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "nodemon": "^1.8.1"
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.15.0"
   }
 }
