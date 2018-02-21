@@ -40,11 +40,11 @@ app.use(compress({
 app.use(json());
 
 // static
-app.use(statics(path.join(__dirname, './web_dist')));
+app.use(statics(path.join(__dirname, './web')));
 
 // config render
 render(app, {
-  root: path.join(__dirname, './web_dist'),
+  root: path.join(__dirname, './web'),
   layout: false,
   viewExt: 'html',
   cache: false,
@@ -67,14 +67,18 @@ app.use(async (ctx, next) => {
 // api 若是api,则后端处理
 app.use(test.routes(), test.allowedMethods());
 
-// 非api/public下 路由交由前端处理,后端不处理路由 render html
-app.use(require('koa-router')().get(/\/downloads\/*/, async (ctx) => {
+// / /admin /downloads 路由后端处理,其他前端路由处理
+app.use(require('koa-router')().get(/\/downloads\/\/*/, async (ctx) => {
   // send file
   // public为根目录,包含downloads目录
   await send(ctx, ctx.path, { root: path.join(__dirname, './public') });
+}).get(/\/admin\/\/*/, async (ctx) => {
+  // admin
+  await ctx.render('/admin/index');
 }).get('*', async (ctx) => {
   // 其他情况全部交由前端处理
   await ctx.render('index');
-}).middleware());
+})
+  .middleware());
 
 module.exports = app;
