@@ -1,16 +1,16 @@
 {
-  "name": "koa-sail",
+  "name": "koa-sail-ts",
   "version": "0.4.20180225",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vdfor/koa-sail.git"
+    "url": "https://github.com/vdfor/koa-sail-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/vdfor/koa-sail/issues"
+    "url": "https://github.com/vdfor/koa-sail-ts/issues"
   },
-  "homepage": "https://github.com/vdfor/koa-sail#readme",
+  "homepage": "https://github.com/vdfor/koa-sail-ts#readme",
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node ./src/index.ts",

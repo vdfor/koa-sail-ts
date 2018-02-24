@@ -1,3 +1,5 @@
-# koa-sail
+# koa-sail-ts
 
-This project was generated with [koa-generator](https://github.com/17koa/koa-generator)
+Seed of koa(2.x) with typescript
+
+The project initially generated with [koa-generator](https://github.com/17koa/koa-generator)
