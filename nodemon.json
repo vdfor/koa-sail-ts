@@ -1,15 +1,17 @@
 {
   "restartable": "rs",
+  "watch": ["src/**/*.ts"],
   "ignore": [
     ".git",
     ".svn",
     "/logs",
-    "/public",
+    "/build",
+    "src/**/*.spec.ts",
     "node_modules/**/node_modules"
   ],
   "verbose": true,
   "env": {
     "NODE_ENV": "development"
   },
-  "ext": "js json"
+  "ext": "ts json"
 }
