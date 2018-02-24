@@ -1,15 +1,14 @@
 #!/usr/bin/env node
 
-// Module dependencies
-const http = require('http');
-// app js
-const app = require('../app');
-// logger
-const logger = require('../common/logger');
+//  Module dependencies
+import * as http from 'http';
+import app from './app';
+import config from './config/config';
+import logger from './common/logger';
 
 // Normalize a port into a number, string, or false
-const normalizePort = (val) => {
-  const port = parseInt(val, 10);
+const normalizePort = (val: string | number) => {
+  const port = typeof val === 'number' ? val : parseInt(val, 10);
   if (Number.isNaN(port)) {
     // named pipe
     return val;
@@ -22,7 +21,7 @@ const normalizePort = (val) => {
 };
 
 // Get port from environment and store
-const port = normalizePort(require(`../config/${process.env.NODE_ENV}`).port);
+const port = normalizePort(config.port);
 // app.set('port', port);
 
 // Create HTTP server
@@ -38,7 +37,7 @@ const onListening = () => {
 };
 
 // Event listener for HTTP server "error" event
-const onError = (error) => {
+const onError = (error: any) => {
   if (error.syscall !== 'listen') {
     logger('http').error(error);
     throw error;

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": [
+      "es6"
+    ],
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./build",
+    "rootDir": "./src",
+    "removeComments": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "esModuleInterop": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
+}
