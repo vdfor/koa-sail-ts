@@ -13,7 +13,7 @@
             "check-space"
         ],
         "curly": true,
-        "eofline": false,
+        "eofline": true,
         "forin": true,
         "indent": [ true, "spaces" ],
         "interface-name": [true, "never-prefix"],
@@ -51,6 +51,11 @@
             "check-else",
             "check-open-brace",
             "check-whitespace"
+        ],
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
         ],
         "radix": true,
         "semicolon": [true, "always"],

@@ -1,13 +1,13 @@
-# 配置信息说明
+# Config Docs
 
-## 前述
-+ development.json -- 开发环境配置
-+ production.json -- 生产环境配置
+## Above
++ development.json -- config for development environment
++ production.json -- config for production environment
 
-## 各项详述
+## Detail
 ```js
 {
-  // 日志配置,详见 https://github.com/log4js-node/log4js-node
+  // config for log4js, visit https://github.com/log4js-node/log4js-node to know more
   log4js: {
     appenders: {
       sail: {
@@ -20,15 +20,15 @@
     categories: {
       default: {
         appenders: [
-          'sail' // 此处请勿修改
+          'sail' // not modify
         ],
-        level: 'ERROR' // 日志级别 ALL/TRACE/DEBUG/INFO/WARN/ERROR/FATAL/OFF
+        level: 'ERROR' // ALL/TRACE/DEBUG/INFO/WARN/ERROR/FATAL/OFF
       }
     }
   },
-  // 数据库配置
+  // config for database
   db: {},
-  // 端口号配置
+  // config for port
   port: 3000
 }
 ```

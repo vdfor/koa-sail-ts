@@ -1,8 +1,8 @@
 import { configure, getLogger } from 'log4js';
-import config from '../config/config';
+import config from '../config/index';
 
 configure(config.log4js);
 
-const logger = (type: string) => getLogger(type);
+// const getLogger = (type: string) => getLogger(type);
 
-export default logger;
+export default getLogger;

@@ -1,33 +1,34 @@
 #!/usr/bin/env node
 
-//  Module dependencies
+//  module dependencies
 import * as http from 'http';
 import app from './app';
-import config from './config/config';
+import config from './config/index';
 import logger from './common/logger';
 
-// Normalize a port into a number, string, or false
+// normalize a port into a number, string, or false
 const normalizePort = (val: string | number) => {
-  const port = typeof val === 'number' ? val : parseInt(val, 10);
-  if (Number.isNaN(port)) {
+  const portNum = typeof val === 'number' ? val : parseInt(val, 10);
+  if (Number.isNaN(portNum)) {
     // named pipe
     return val;
   }
-  if (port >= 0) {
+  if (portNum >= 0) {
     // port number
-    return port;
+    return portNum;
   }
   return false;
 };
 
-// Get port from environment and store
+// get port from environment
 const port = normalizePort(config.port);
+// // store port
 // app.set('port', port);
 
-// Create HTTP server
+// create HTTP server
 const server = http.createServer(app.callback());
 
-// Event listener for HTTP server "listening" event
+// event listener for HTTP server "listening" event
 const onListening = () => {
   const addr = server.address();
   const bind = typeof addr === 'string'
@@ -36,15 +37,17 @@ const onListening = () => {
   logger('http').debug(`Listening on ${bind}`);
 };
 
-// Event listener for HTTP server "error" event
+// event listener for HTTP server "error" event
 const onError = (error: any) => {
   if (error.syscall !== 'listen') {
     logger('http').error(error);
     throw error;
   }
+
   const bind = typeof port === 'string'
     ? `Pipe ${port}`
     : `Port ${port}`;
+  
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
@@ -61,7 +64,7 @@ const onError = (error: any) => {
   }
 };
 
-// Listen on provided port, on all network interfacesListen on provided port, on all network interfaces
+// listen on provided port, on all network interfacesListen on provided port, on all network interfaces
 server.listen(port, () => {
   logger('startup').info('Server listening on port ', server.address().port, ' with pid ', process.pid);
 });
