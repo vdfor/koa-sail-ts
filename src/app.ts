@@ -67,19 +67,19 @@ app.use(async (ctx, next) => {
   }
 });
 
-// api 若是api,则后端处理
+// apis
 app.use(test.routes());
 
-// /admin /downloads 路由后端处理,其他前端路由处理
+// /admin /downloads => The back-end route to deal
 app.use(router.get(/\/downloads\/\/*/, async (ctx) => {
   // send file
-  // public为根目录,包含downloads目录
+  // ./public/downloads
   await send(ctx, ctx.path, { root: path.join(__dirname, './public') });
 }).get(/\/admin\/\/*/, async (ctx) => {
   // admin
   await ctx.render('/admin/index');
 }).get('*', async (ctx) => {
-  // 其他情况全部交由前端处理
+  // The front-end route to deal
   await ctx.render('index');
 })
   .middleware());
