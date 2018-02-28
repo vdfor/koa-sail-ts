@@ -3,22 +3,9 @@
 //  module dependencies
 import * as http from 'http';
 import app from './app';
-import config from './config/index';
+import config from './common/config';
 import logger from './common/logger';
-
-// normalize a port into a number, string, or false
-const normalizePort = (val: string | number) => {
-  const portNum = typeof val === 'number' ? val : parseInt(val, 10);
-  if (Number.isNaN(portNum)) {
-    // named pipe
-    return val;
-  }
-  if (portNum >= 0) {
-    // port number
-    return portNum;
-  }
-  return false;
-};
+import { normalizePort } from './common/utils';
 
 // get port from environment
 const port = normalizePort(config.port);
@@ -47,7 +34,7 @@ const onError = (error: any) => {
   const bind = typeof port === 'string'
     ? `Pipe ${port}`
     : `Port ${port}`;
-  
+
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':

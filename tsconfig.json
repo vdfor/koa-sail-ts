@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": false,
     "target": "es2015",
     "lib": [
       "es6"
@@ -19,7 +20,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*.ts"
   ],
   "exclude": [
     "node_modules",

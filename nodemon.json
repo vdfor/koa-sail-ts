@@ -6,6 +6,7 @@
     ".svn",
     "/logs",
     "/build",
+    "/config",
     "src/**/*.spec.ts",
     "node_modules/**/node_modules"
   ],

@@ -11,7 +11,7 @@ import onerror = require('koa-onerror');
 // get logger
 import getLogger from './common/logger';
 // apis
-import test from './api/test';
+import users from './api/users';
 
 // app
 const app = new Koa();
@@ -68,7 +68,7 @@ app.use(async (ctx, next) => {
 });
 
 // apis
-app.use(test.routes());
+app.use(users.routes());
 
 // /admin /downloads => The back-end route to deal
 app.use(router.get(/\/downloads\/\/*/, async (ctx) => {

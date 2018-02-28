@@ -1,6 +1,6 @@
 {
   "name": "koa-sail-ts",
-  "version": "0.4.20180226",
+  "version": "0.5.20180228",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
@@ -14,10 +14,10 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec ts-node ./src/index.ts",
-    "build": "tsc",
+    "build": "rm -rf ./build && tsc",
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive"
   },
   "dependencies": {
     "koa": "^2.5.0",
@@ -41,6 +41,8 @@
     "@types/koa-static": "^4.0.0",
     "@types/koa-views": "^2.0.3",
     "@types/node": "^9.4.6",
+    "axios": "^0.18.0",
+    "mocha": "^5.0.1",
     "nodemon": "^1.15.0",
     "ts-node": "^5.0.0",
     "tslint": "^5.9.1",
