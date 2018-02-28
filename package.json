@@ -13,7 +13,7 @@
   "homepage": "https://github.com/vdfor/koa-sail-ts#readme",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=development nodemon --exec ts-node ./src/index.ts",
+    "start": "cross-env NODE_ENV=development nodemon --exec ts-node ./src/index.ts",
     "build": "rm -rf ./build && tsc",
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
@@ -42,6 +42,7 @@
     "@types/koa-views": "^2.0.3",
     "@types/node": "^9.4.6",
     "axios": "^0.18.0",
+    "cross-env": "^5.1.3",
     "mocha": "^5.0.1",
     "nodemon": "^1.15.0",
     "ts-node": "^5.0.0",
