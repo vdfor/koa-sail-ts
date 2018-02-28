@@ -1,3 +1,4 @@
 # ignore lists
 src/
 node_modules/
+test/
