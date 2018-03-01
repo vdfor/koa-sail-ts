@@ -1,6 +1,6 @@
 {
   "name": "koa-sail-ts",
-  "version": "0.5.20180228",
+  "version": "0.5.20180302",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
@@ -20,6 +20,7 @@
     "test": "mocha --recursive"
   },
   "dependencies": {
+    "ejs": "^2.5.7",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-compress": "^2.0.0",
