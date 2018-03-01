@@ -45,13 +45,11 @@ app.use(compress({
 app.use(json());
 
 // static
-app.use(statics(path.join(__dirname, './web')));
+app.use(statics(path.join(__dirname, '../views')));
 
 // koa-views
-app.use(views(path.join(__dirname, './web'), {
-  map: {
-    html: 'underscore'
-  }
+app.use(views(path.join(__dirname, '../views'), {
+  extension: 'ejs'
 }));
 
 // logger
@@ -73,14 +71,17 @@ app.use(users.routes());
 // /admin /downloads => The back-end route to deal
 app.use(router.get(/\/downloads\/\/*/, async (ctx) => {
   // send file
-  // ./public/downloads
-  await send(ctx, ctx.path, { root: path.join(__dirname, './public') });
+  // ../public/downloads
+  await send(ctx, ctx.path, { root: path.join(__dirname, '../public') });
 }).get(/\/admin\/\/*/, async (ctx) => {
   // admin
   await ctx.render('/admin/index');
 }).get('*', async (ctx) => {
   // The front-end route to deal
-  await ctx.render('index');
+  await ctx.render('index', {
+    title: 'koa-sail-ts',
+    content: '<h1>Hello, <a href="https://github.com/vdfor/koa-sail-ts" target="_blank">koa-sail-ts</a></h1>'
+  });
 })
   .middleware());
 
