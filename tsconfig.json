@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "target": "es2015",
+    "baseUrl": ".",
+    "allowJs": true,
+    "target": "es2017",
     "lib": [
-      "es6"
+      "es2017"
     ],
     "module": "commonjs",
-    "sourceMap": true,
-    "outDir": "./build",
+    "sourceMap": false,
+    "outDir": "./build/",
     "rootDir": "./src",
     "removeComments": true,
     "strict": true,
@@ -20,7 +21,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "./src/**/*.ts"
+    "./src/**/*"
   ],
   "exclude": [
     "node_modules",

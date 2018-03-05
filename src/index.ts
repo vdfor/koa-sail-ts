@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 //  module dependencies
 import * as http from 'http';
 import app from './app';
