@@ -27,7 +27,7 @@ npm run prod
 ```
 
 ## Config
-Refer to [config docs]('./config/README.md')
+Refer to [config docs](config/README.MD)
 
 ## With docker
 ```bash
