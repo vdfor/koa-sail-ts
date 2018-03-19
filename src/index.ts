@@ -1,9 +1,9 @@
 //  module dependencies
 import * as http from 'http';
 import app from './app';
-import config from './common/config';
-import logger from './common/logger';
-import { normalizePort } from './common/utils';
+import config from './lib/config';
+import logger from './lib/logger';
+import { normalizePort } from './lib/utils';
 
 // get port from environment
 const port = normalizePort(config.port);

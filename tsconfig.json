@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/",
     "allowJs": true,
     "target": "es2017",
-    "lib": [
-      "es2017"
-    ],
     "module": "commonjs",
-    "sourceMap": false,
+    "sourceMap": true,
     "outDir": "./build/",
     "rootDir": "./src",
     "removeComments": true,

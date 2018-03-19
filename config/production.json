@@ -1,4 +1,5 @@
 {
+  "jwtSecret": "test",
   "log4js": {
     "appenders": {
       "sail": {

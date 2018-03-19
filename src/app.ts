@@ -9,9 +9,11 @@ import * as statics from 'koa-static';
 import * as path from 'path';
 import onerror = require('koa-onerror');
 // get logger
-import getLogger from './common/logger';
+import getLogger from './lib/logger';
 // apis
-import users from './api/users';
+import usersApi from './api/users';
+import testApi from './api/test';
+import loginApi from './api/login';
 
 // app
 const app = new Koa();
@@ -66,7 +68,9 @@ app.use(async (ctx, next) => {
 });
 
 // apis
-app.use(users.routes());
+app.use(usersApi.routes());
+app.use(testApi.routes());
+app.use(loginApi.routes());
 
 // /admin /downloads => The back-end route to deal
 app.use(router.get(/\/downloads\/\/*/, async (ctx) => {
