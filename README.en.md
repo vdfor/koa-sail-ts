@@ -29,7 +29,7 @@ npm run prod
 ```
 
 ## Config
-Refer to [config docs](config-document.md)
+Refer to [config-document](docs/config-document.md)
 
 ## With docker
 ```bash

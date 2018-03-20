@@ -32,7 +32,7 @@ npm run prod
 ```
 
 ## 关于配置文件
-参考[config docs](config-document.md)
+参考[config-document](docs/config-document.md)
 
 ## 搭配docker
 ```bash
