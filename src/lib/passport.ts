@@ -2,11 +2,11 @@ import * as passport from 'koa-passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { hashPasswd } from './utils';
 
-// 序列化ctx.login()触发
-passport.serializeUser((user, done) => {
-  // console.log('serializeUser: ', user);
-  done(null, user);
-});
+// // 序列化ctx.login()触发
+// passport.serializeUser((user, done) => {
+//   // console.log('serializeUser: ', user);
+//   done(null, user);
+// });
 // // 反序列化（请求时，session中存在"passport":{"user":"1"}触发）
 // passport.deserializeUser(async (id, done) => {
 //   console.log('deserializeUser: ', id)
@@ -17,9 +17,10 @@ passport.serializeUser((user, done) => {
 passport.use(new LocalStrategy(
   {
     usernameField: 'username',
-    passwordField: 'passwd'
+    passwordField: 'password'
   },
   (async (username, passwd, done) => {
+    // get user info from db
     let dbUser = {
       id: 'testid',
       username: 'testname',
@@ -28,9 +29,9 @@ passport.use(new LocalStrategy(
     if (username === dbUser.username && hashPasswd(passwd) === dbUser.passwd) {
       const user = { id: dbUser.id, username: dbUser.username };
       done(null, user, { message: 'success' });
-    } else {
-      done(null, false, { message: 'incorrect' });
+      return;
     }
+    done(null, false, { message: 'incorrect' });
   })));
 
 export default passport;

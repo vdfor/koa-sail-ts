@@ -4,9 +4,11 @@
 + development.json -- config for development environment
 + production.json -- config for production environment
 
-## Detail
+## Detail/Example
 ```js
 {
+  // json web token secret, visit https://github.com/auth0/node-jsonwebtoken to know more
+  jwtSecret: 'test',
   // config for log4js, visit https://github.com/log4js-node/log4js-node to know more
   log4js: {
     appenders: {

@@ -19,7 +19,7 @@ router.post('/', (ctx, next) => passport.authenticate(
       const { id } = user;
       let token;
       try {
-        token = await signToken({ id }, '8d');
+        token = await signToken({ id }, '7d');
         // cache.set(`${id}-${token}`, 1, 1 * 60 * 60 * 24 * 7);
       } catch (error) {
         throw error;

@@ -1,18 +1,23 @@
 # koa-sail-ts
 
-## Introduction
-Seed of koa(2.x) with typescript
+[README English Version](README.en.md)
 
-The project initially generated with [koa-generator](https://github.com/17koa/koa-generator)
+## 关于
+[koa](https://github.com/koajs/koa)(2.x)的种子工程, 采用`typescript`编写
 
-## Start
+项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4`之后切换到`typescript`。随着项目的发展，已与最初相差甚大。
+
+## 快速开始
 ```bash
 npm i
 # use ts-node
 npm start
 ```
 
-## Build
+## 构建
+
+提供两种构建方式，一种使用`tsc`打包构建，一种使用[webpack](https://webpack.github.io/)打包。
+
 ```bash
 # build by tsc
 npm run build
@@ -20,16 +25,16 @@ npm run build
 npm run build:webpack
 ```
 
-## Production
+## 用于生产环境
 ```bash
 # first run `npm run build` or `npm run build:webpack`
 npm run prod
 ```
 
-## Config
-Refer to [config docs](config/README.MD)
+## 关于配置文件
+参考[config docs](config-document.md)
 
-## With docker
+## 搭配docker
 ```bash
 # first run `npm run build` or `npm run build:webpack`
 # build docker image

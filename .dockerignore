@@ -1,5 +1,6 @@
 # ignore lists
 src/
 node_modules/
+docs/
 test/
 logs/
