@@ -1,8 +1,6 @@
 import * as Router from 'koa-router';
-import * as Koa from 'koa';
 import { signToken } from '../lib/utils';
 import passport from '../lib/passport';
-// const cache = require('../common/cache');
 
 const router = new Router();
 
@@ -26,7 +24,7 @@ router.post('/', (ctx, next) => passport.authenticate(
       }
       resData = {
         user,
-        token
+        access_token: token
       };
     }
     ctx.body = resData || {};

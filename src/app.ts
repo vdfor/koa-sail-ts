@@ -12,7 +12,7 @@ import onerror = require('koa-onerror');
 import getLogger from './lib/logger';
 // apis
 import usersApi from './api/users';
-import testApi from './api/test';
+import userApi from './api/user';
 import loginApi from './api/login';
 
 // app
@@ -69,7 +69,7 @@ app.use(async (ctx, next) => {
 
 // apis
 app.use(usersApi.routes());
-app.use(testApi.routes());
+app.use(userApi.routes());
 app.use(loginApi.routes());
 
 // /admin /downloads => The back-end route to deal

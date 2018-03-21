@@ -3,11 +3,11 @@ const axios = require('axios');
 
 axios.defaults.baseURL = 'http://localhost:3000';
 
-describe('users test', () => {
-  it('users/', (done) => {
-    axios.get('/api/v0/users').then(res => {
+describe('user test', () => {
+  it('user/', (done) => {
+    axios.get('/api/v0/user/1').then(res => {
       assert.deepStrictEqual(200, res.status);
-      assert.deepStrictEqual(true, res.data instanceof Array);
+      assert.deepStrictEqual(true, res.data instanceof Object);
       done();
     });
   });

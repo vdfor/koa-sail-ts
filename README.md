@@ -3,9 +3,7 @@
 [README English Version](README.en.md)
 
 ## 关于
-[koa](https://github.com/koajs/koa)(2.x)的种子工程, 采用`typescript`编写
-
-项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4`之后切换到`typescript`。随着项目的发展，已与最初相差甚大。
+基于[koa](https://github.com/koajs/koa)(2.x)框架的种子工程, 采用`typescript`编写
 
 ## 快速开始
 ```bash
@@ -14,13 +12,28 @@ npm i
 npm start
 ```
 
+## 测试与检查
+```bash
+# 单元测试 first run `npm start`
+npm run test
+# 代码规范检查
+npm run lint:check
+```
+
 ## 构建
 
-提供两种构建方式，一种使用`tsc`打包构建，一种使用[webpack](https://webpack.github.io/)打包。
+提供两种构建方式：
+
+1. 使用`tsc`打包构建
 
 ```bash
 # build by tsc
 npm run build
+```
+
+2. 使用[webpack](https://webpack.github.io)打包构建。
+
+```bash
 # build by webpack
 npm run build:webpack
 ```
@@ -37,6 +50,9 @@ npm run prod
 ## 搭配docker
 ```bash
 # first run `npm run build` or `npm run build:webpack`
-# build docker image
+# 生成docker镜像
 docker build -t <image-name>:<tag> .
 ```
+
+## 致谢
+项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4`之后切换到`typescript`。虽然随着项目的发展，已与最初相差甚大，但`koa-generator`对于项目的起步十分重要。
