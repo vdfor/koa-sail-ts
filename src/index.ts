@@ -1,6 +1,7 @@
 //  module dependencies
 import * as http from 'http';
 import app from './app';
+import wsListener from './websocket';
 import config from './lib/config';
 import logger from './lib/logger';
 import { normalizePort } from './lib/utils';
@@ -48,6 +49,9 @@ const onError = (error: any) => {
       throw error;
   }
 };
+
+// websocket listener
+wsListener(server);
 
 // listen on provided port, on all network interfacesListen on provided port, on all network interfaces
 server.listen(port, () => {

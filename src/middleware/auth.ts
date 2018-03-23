@@ -1,5 +1,5 @@
 import * as Koa from 'koa';
-import { decodeToken, getToken } from './utils';
+import { decodeToken, getToken } from '../lib/utils';
 
 interface User {
   id: string | number;

@@ -25,7 +25,7 @@ const logger = getLogger('app');
 // error handler
 onerror(app);
 
-// middlewares
+// bodyparser
 app.use(bodyparser({
   // multipart: true,
   enableTypes: ['json', 'form', 'text']
@@ -53,6 +53,18 @@ app.use(views(path.join(__dirname, '../views'), {
 }));
 
 // logger
+app.use(async (ctx, next) => {
+  try {
+    const start = + new Date();
+    await next();
+    const ms = + new Date() - start;
+    logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
+  } catch (error) {
+    logger.error(error);
+    throw error;
+  }
+});
+
 app.use(async (ctx, next) => {
   try {
     const start = + new Date();

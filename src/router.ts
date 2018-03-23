@@ -1,10 +1,10 @@
 import * as Router from 'koa-router';
-import userCtrl from './controllers/user';
-import auth from './lib/auth';
+import userCtrl from './controller/user';
+import auth from './middleware/auth';
 
 const router = new Router();
 
-router.prefix('/api/v1');
+router.prefix('/api/v0');
 
 router
   .post('/user/login', userCtrl.login)
