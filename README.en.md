@@ -71,6 +71,7 @@ There are docs may be you need when you developing web app with `koa-sail-ts`：
 
 + koa with mysql, refer to the part `koa with mysql` of [mysql入门](https://github.com/vdfor/docs/blob/master/MySQL%E5%85%A5%E9%97%A8.md)
 + koa with mongodb, refer to the part `koa with mongodb` of [mongodb入门](https://github.com/vdfor/docs/blob/master/MongoDB%E5%85%A5%E9%97%A8.md)
++ [用户登录与访问权限控制设计](https://github.com/vdfor/docs/blob/master/%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E8%AE%BE%E8%AE%A1.md)
 
 ## Thanks
 The project's birth and development is inseparable from `koa`, `log4js`, `jsonwebtoken`, `typescript`, and so on. For detail, refer to the part `dependencies` and `devDependencies` of [package.json](package.json).
