@@ -58,12 +58,13 @@ docker build -t <image-name>:<tag> .
 + 作为静态资源服务器，支持多`spa`项目部署
 + 采用[pm2](http://pm2.keymetrics.io)作为`nodejs`进程管理工具
 + 登录与api鉴权(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
++ [websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)支持(powered by [ws](https://github.com/websockets/ws))
 + 日志记录(powered by [log4js](https://github.com/stritti/log4js))
 + 单元测试(powered by [mocha](https://mochajs.org/))
 + 支持`docker`部署
 
 ## 未来计划
-+ [websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)支持
++ api参数校验
 + 功能模块化定制
 + ...
 
