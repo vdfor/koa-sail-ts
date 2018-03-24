@@ -19,7 +19,7 @@
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
     "lint:check": "tslint -p tsconfig.json -c tslint.json ./src/**/*.ts",
-    "test": "mocha --recursive",
+    "test": "NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts",
     "clean": "rm -rf build"
   },
   "dependencies": {
@@ -50,8 +50,10 @@
     "@types/koa-send": "^4.1.1",
     "@types/koa-static": "^4.0.0",
     "@types/koa-views": "^2.0.3",
+    "@types/mocha": "^5.0.0",
     "@types/node": "^9.4.6",
     "@types/passport-local": "^1.0.32",
+    "@types/supertest": "^2.0.4",
     "@types/ws": "^4.0.1",
     "cross-env": "^5.1.3",
     "externals-dependencies": "^1.0.4",
