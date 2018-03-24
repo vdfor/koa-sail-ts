@@ -40,14 +40,6 @@ class UserController {
     };
   }
 
-  static async getUsers(ctx: Koa.Context) {
-    console.log((ctx.request as any).uid);
-    ctx.body = [
-      { id: 1, name: 'John' },
-      { id: 2, name: 'Lucy' }
-    ];
-  }
-
 }
 
 export default UserController;
