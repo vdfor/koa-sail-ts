@@ -1,6 +1,6 @@
 {
   "name": "koa-sail-ts",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
@@ -53,11 +53,11 @@
     "@types/node": "^9.4.6",
     "@types/passport-local": "^1.0.32",
     "@types/ws": "^4.0.1",
-    "axios": "^0.18.0",
     "cross-env": "^5.1.3",
     "externals-dependencies": "^1.0.4",
     "mocha": "^5.0.1",
     "nodemon": "^1.15.0",
+    "supertest": "^3.0.0",
     "ts-loader": "^4.1.0",
     "ts-node": "^5.0.0",
     "tsconfig-paths-webpack-plugin": "^3.0.2",
