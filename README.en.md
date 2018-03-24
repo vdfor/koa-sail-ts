@@ -56,6 +56,7 @@ docker build -t <image-name>:<tag> .
 + As static server，suport multi `spa`
 + Use [pm2](http://pm2.keymetrics.io) as `nodejs` process manager
 + Login and api authorization(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
++ Api params validator [validator-document](docs/validator-document.md)
 + [websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) supported(powered by [ws](https://github.com/websockets/ws))
 + Logging(powered by [log4js](https://github.com/stritti/log4js))
 + Unit test(powered by [mocha](https://mochajs.org/))
