@@ -7,9 +7,7 @@ import * as views from 'koa-views';
 import * as bodyparser from 'koa-bodyparser';
 import * as statics from 'koa-static';
 import * as path from 'path';
-import onerror = require('koa-onerror');
-// get logger
-import getLogger from './lib/logger';
+import logging from './middleware/logging';
 // apis
 import apis from './router';
 
@@ -19,11 +17,8 @@ const app = new Koa();
 // router
 const router = new Router();
 
-// log4js
-const logger = getLogger('app');
-
-// error handler
-onerror(app);
+// logging(include handle error)
+app.use(logging);
 
 // bodyparser
 app.use(bodyparser({
@@ -51,19 +46,6 @@ app.use(statics(path.join(__dirname, '../views')));
 app.use(views(path.join(__dirname, '../views'), {
   extension: 'ejs'
 }));
-
-// logger
-app.use(async (ctx, next) => {
-  try {
-    const start = + new Date();
-    await next();
-    const ms = + new Date() - start;
-    logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
-  } catch (error) {
-    logger.error(error);
-    throw error;
-  }
-});
 
 // apis
 app.use(apis.routes());
