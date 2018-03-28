@@ -58,7 +58,7 @@ app.use(router.get(/\/downloads\/\/*/, async (ctx) => {
 }).get(/\/admin\/\/*/, async (ctx) => {
   // admin
   await ctx.render('/admin/index');
-}).get('*', async (ctx) => {
+}).get('', async (ctx) => {
   // The front-end route to deal
   await ctx.render('index', {
     title: 'koa-sail-ts',
