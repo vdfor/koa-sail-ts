@@ -18,7 +18,7 @@ const app = new Koa();
 const router = new Router();
 
 // logging(include handle error)
-app.use(logging);
+app.use(logging());
 
 // bodyparser
 app.use(bodyparser({

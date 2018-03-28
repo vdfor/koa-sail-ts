@@ -11,7 +11,7 @@ const logging = () => async (ctx: Koa.Context, next: Function) => {
     logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
   } catch (error) {
     logger.error(error);
-    ctx.app.emit('error', error);
+    // ctx.app.emit('error', error);
     ctx.body = { error: error.message || 'server error' };
     ctx.status = error.status || 500;
     // throw error;
