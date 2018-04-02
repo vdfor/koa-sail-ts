@@ -1,6 +1,5 @@
 import * as request from 'supertest';
-
-const baseUrl = 'http://localhost:3000/api/v0';
+import baseUrl from './baseUrl';
 
 describe('Get /test', () => {
   it('should respond with json', (done) => {
