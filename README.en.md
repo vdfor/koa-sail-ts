@@ -55,7 +55,6 @@ docker build -t <image-name>:<tag> .
 ## Feature
 + Use `typescript`
 + Construct restful api by [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-+ As static server，suport multi `spa`
 + Use [pm2](http://pm2.keymetrics.io) as `nodejs` process manager
 + Login and api authorization(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
 + Api params validator [validator-document](docs/validator-document.md)

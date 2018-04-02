@@ -57,7 +57,6 @@ docker build -t <image-name>:<tag> .
 ## 功能与特点
 + 采用`typescript`
 + 基于[class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)类构建restful api
-+ 作为静态资源服务器，支持多`spa`项目部署
 + 采用[pm2](http://pm2.keymetrics.io)作为`nodejs`进程管理工具
 + 登录与api鉴权(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
 + 提供api参数校验中间件 [validator-document](docs/validator-document.md)
