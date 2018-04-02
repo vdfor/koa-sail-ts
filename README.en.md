@@ -71,6 +71,7 @@ docker build -t <image-name>:<tag> .
 ## Document related
 There are docs may be you need when you developing web app with `koa-sail-ts`：
 
++ koa as static-server, refer to [koa下多spa项目部署](https://github.com/vdfor/docs/blob/master/node.js/koa%E4%B8%8B%E5%A4%9Aspa%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2.md)
 + koa with mysql, refer to the part `koa with mysql` of [mysql入门](https://github.com/vdfor/docs/blob/master/MySQL%E5%85%A5%E9%97%A8.md)
 + koa with mongodb, refer to the part `koa with mongodb` of [mongodb入门](https://github.com/vdfor/docs/blob/master/MongoDB%E5%85%A5%E9%97%A8.md)
 + [用户登录与访问权限控制设计](https://github.com/vdfor/docs/blob/master/%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E8%AE%BE%E8%AE%A1.md)
