@@ -1,5 +1,4 @@
 import * as Koa from 'koa';
-import * as Router from 'koa-router';
 import * as compress from 'koa-compress';
 import * as json from 'koa-json';
 import * as bodyparser from 'koa-bodyparser';
@@ -9,9 +8,6 @@ import apis from './router';
 
 // app
 const app = new Koa();
-
-// router
-const router = new Router();
 
 // logging(include handle error)
 app.use(logging());
