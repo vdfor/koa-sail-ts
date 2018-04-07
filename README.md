@@ -1,6 +1,4 @@
-# koa-sail-ts
-
-[![Build Status](https://travis-ci.org/vdfor/koa-sail-ts.svg?branch=master)](https://travis-ci.org/vdfor/koa-sail-ts)
+# koa-sail-ts [![Build Status](https://travis-ci.org/vdfor/koa-sail-ts.svg?branch=master)](https://travis-ci.org/vdfor/koa-sail-ts)
 
 [README English Version](README.en.md)
 
@@ -82,5 +80,5 @@ docker build -t <image-name>:<tag> .
 
 本项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4.0`之后切换到`typescript`。虽然随着项目的发展，已与最初相差甚大，但`koa-generator`对于本项目的起步十分重要。
 
-`0.7.0`版本采用`class`类重新设计了api，参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x)分支
+自`0.7.0`版本起，采用`class`类重新设计了api，参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x)分支
 

@@ -1,6 +1,4 @@
-# koa-sail-ts
-
-[![Build Status](https://travis-ci.org/vdfor/koa-sail-ts.svg?branch=master)](https://travis-ci.org/vdfor/koa-sail-ts)
+# koa-sail-ts [![Build Status](https://travis-ci.org/vdfor/koa-sail-ts.svg?branch=master)](https://travis-ci.org/vdfor/koa-sail-ts)
 
 [README中文版](README.md)
 
@@ -79,6 +77,6 @@ There are docs may be you need when you developing web app with `koa-sail-ts`：
 ## Thanks
 The project's birth and development is inseparable from `koa`, `log4js`, `jsonwebtoken`, `typescript`, and so on. For detail, refer to the part `dependencies` and `devDependencies` of [package.json](package.json).
 
-The project initially generated with [koa-generator](https://github.com/17koa/koa-generator) with `javascripts`, and switch to `typescript` after `0.4.0`. The project has undergone great change with the development of the project, but `koa-generator` is import for the birth of `koa-sail-ts`.
+The project initially generated with [koa-generator](https://github.com/17koa/koa-generator) with `javascripts`, and switch to `typescript` since `0.4.0`. The project has undergone great change with the development of the project, but `koa-generator` is import for the birth of `koa-sail-ts`.
 
-Construct restful api by `class` after `0.7.0`, I referred to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x) branch.
+Construct restful api by `class` since `0.7.0`, I referred to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x) branch.
