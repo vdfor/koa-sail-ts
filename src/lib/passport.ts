@@ -1,6 +1,6 @@
 import * as passport from 'koa-passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { hashPasswd } from './utils';
+import { getEncryptedPasswd } from './utils';
 
 // submit data(strategy)
 passport.use(new LocalStrategy(
@@ -15,7 +15,7 @@ passport.use(new LocalStrategy(
       username: 'testname',
       passwd: 'testpasswd'
     };
-    if (username === dbUser.username && hashPasswd(passwd) === dbUser.passwd) {
+    if (username === dbUser.username && getEncryptedPasswd(passwd) === dbUser.passwd) {
       const user = { id: dbUser.id, username: dbUser.username };
       done(null, user, { message: 'success' });
       return;

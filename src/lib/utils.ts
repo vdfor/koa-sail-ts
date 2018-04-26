@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 import * as Koa from 'koa';
 import config from './config';
 
-export const hashPasswd = (passwd: string) => crypto.createHash('sha256').update(passwd).digest('base64');
+export const getEncryptedPasswd = (passwd: string) => crypto.createHash('sha256').update(passwd).digest('base64');
 
 export const getToken = (req: Koa.Request) => {
   if (req && req.body && req.body.access_token) {
@@ -21,7 +21,7 @@ export const decodeToken = (token: string) => new Promise((resolve, reject) => {
   // decode token
   try {
     const decoded: any = jwt.verify(token, config.jwtSecret, { ignoreNotBefore: false });
-    if (typeof decoded === 'object' && decoded.user && decoded.user.id) {
+    if (typeof decoded === 'object' && decoded.user) {
       // const cacheToken = cache.get(`user-${decoded.user.id}-${token}`);
       // return cacheToken ? decoded.user.id : null;
       return resolve(decoded.user);
