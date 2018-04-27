@@ -1,6 +1,6 @@
 import * as Koa from 'koa';
-import { signToken } from '../lib/utils';
-import passport from '../lib/passport';
+import { signToken } from '../utils/helpers';
+import passport from '../utils/passport';
 
 class UserController {
   static login(ctx: Koa.Context) {
@@ -31,13 +31,22 @@ class UserController {
     ))(ctx, () => new Promise(() => console.log('login')));
   }
 
-  static async getUser(ctx: Koa.Context) {
+  static async findOne(ctx: Koa.Context) {
     const { id } = ctx.params;
     ctx.body = {
       id,
       name: 'John',
       age: Math.floor(Math.random() * 100)
     };
+  }
+
+  static async find(ctx: Koa.Context) {
+    // console.log((ctx.request as any).uid);
+    const { role } = ctx.query;
+    ctx.body = [
+      { id: 1, name: 'John', role },
+      { id: 2, name: 'Lucy', role }
+    ];
   }
 
 }

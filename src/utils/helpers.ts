@@ -1,7 +1,7 @@
 import * as crypto from 'crypto';
 import * as jwt from 'jsonwebtoken';
 import * as Koa from 'koa';
-import config from './config';
+import config from '../config';
 
 export const getEncryptedPasswd = (passwd: string) => crypto.createHash('sha256').update(passwd).digest('base64');
 

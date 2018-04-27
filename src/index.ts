@@ -2,9 +2,9 @@
 import * as http from 'http';
 import app from './app';
 import wsListener from './websocket';
-import config from './lib/config';
-import logger from './lib/logger';
-import { normalizePort } from './lib/utils';
+import config from './config';
+import logger from './utils/logger';
+import { normalizePort } from './utils/helpers';
 
 // get port from environment
 const port = normalizePort(config.port);

@@ -1,6 +1,6 @@
 import * as WebSocket from 'ws';
 import * as http from 'http';
-import logger from '../lib/logger';
+import logger from '../utils/logger';
 
 interface Ws extends WebSocket {
   query?: { [key: string]: string | any };
