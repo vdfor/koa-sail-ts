@@ -30,6 +30,8 @@
   },
   // config for database
   db: {},
+  // config for resources -- base: src/
+  resource: '../views',
   // config for port
   port: 3000
 }

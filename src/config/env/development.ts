@@ -16,6 +16,7 @@ const dev = {
     }
   },
   db: {},
+  resource: '../views',
   port: 3000
 };
 

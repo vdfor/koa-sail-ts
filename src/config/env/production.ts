@@ -19,6 +19,7 @@ const prod = {
     }
   },
   db: {},
+  resource: '../views',
   port: 8181
 };
 

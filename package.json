@@ -30,6 +30,7 @@
     "koa-json": "^2.0.2",
     "koa-passport": "^4.0.1",
     "koa-router": "^7.4.0",
+    "koa-static": "^4.0.3",
     "log4js": "^2.5.3",
     "passport-local": "^1.0.0",
     "ws": "^5.1.1"
@@ -42,6 +43,7 @@
     "@types/koa-json": "^2.0.18",
     "@types/koa-passport": "^4.0.1",
     "@types/koa-router": "^7.0.28",
+    "@types/koa-static": "^4.0.0",
     "@types/mocha": "^5.2.0",
     "@types/node": "^10.0.0",
     "@types/passport-local": "^1.0.33",

@@ -1,10 +1,13 @@
 import * as Koa from 'koa';
+import * as path from 'path';
 import * as compress from 'koa-compress';
 import * as json from 'koa-json';
 import * as bodyparser from 'koa-bodyparser';
+import * as statics from 'koa-static';
+import config from './config';
 import logging from './middleware/logging';
 // apis
-import apis from './router';
+import apis from './api-router';
 
 // app
 const app = new Koa();
@@ -30,6 +33,9 @@ app.use(compress({
 
 // json
 app.use(json());
+
+// static
+app.use(statics(path.join(__dirname, config.resource)));
 
 // apis
 app.use(apis.routes());

@@ -1,7 +1,9 @@
 import * as Router from 'koa-router';
-import routes from './config/routes';
+import config from './config';
 
 const router = new Router();
+
+const { routes } = config;
 
 router.prefix('/api/v0');
 
