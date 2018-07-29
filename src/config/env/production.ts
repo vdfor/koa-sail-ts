@@ -3,7 +3,7 @@ const prod = {
   log4js: {
     appenders: {
       sail: {
-        type: 'datefile', // console/file/datefile
+        type: 'datefile',
         filename: 'logs/log',
         alwaysIncludePattern: true,
         pattern: '-yyyyMMdd.log',
