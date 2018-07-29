@@ -5,9 +5,9 @@ const logger = getLogger('app');
 
 const logging = () => async (ctx: Koa.Context, next: Function) => {
   try {
-    const start = + new Date();
+    const start = Date.now();
     await next();
-    const ms = + new Date() - start;
+    const ms = Date.now() - start;
     logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
   } catch (error) {
     logger.error(error);

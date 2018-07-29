@@ -4,9 +4,6 @@ const dev = {
     appenders: {
       sail: {
         type: 'console',
-        filename: 'logs/log',
-        maxLogSize: 20971520,
-        backups: 10
       }
     },
     categories: {
