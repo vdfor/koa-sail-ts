@@ -3,10 +3,8 @@ const prod = {
   log4js: {
     appenders: {
       sail: {
-        type: 'datefile',
+        type: 'file',
         filename: 'logs/log',
-        alwaysIncludePattern: true,
-        pattern: '-yyyyMMdd.log',
         maxLogSize: 20971520,
         backups: 15
       }
