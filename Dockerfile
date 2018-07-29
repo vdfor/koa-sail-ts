@@ -1,8 +1,8 @@
 # 设置基础镜像，若本地不存在基础镜像，会从远程服务器pull镜像
-FROM node:8.9-alpine
+FROM node:8.10-alpine
 
 # Author
-MAINTAINER vdfor <jiakun.li@qq.com>
+LABEL vdfor <jiakun.li@qq.com>
 
 # 创建app目录,保存我们的代码
 RUN mkdir -p /usr/src/app

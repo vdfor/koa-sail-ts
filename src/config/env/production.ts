@@ -14,7 +14,7 @@ const prod = {
         appenders: [
           'sail'
         ],
-        level: 'ERROR'
+        level: 'ALL'
       }
     }
   },
