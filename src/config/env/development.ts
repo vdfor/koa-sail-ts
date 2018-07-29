@@ -3,7 +3,10 @@ const dev = {
   log4js: {
     appenders: {
       sail: {
-        type: 'console'
+        type: 'console',
+        filename: 'logs/log',
+        maxLogSize: 20971520,
+        backups: 10
       }
     },
     categories: {
