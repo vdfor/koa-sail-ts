@@ -17,7 +17,8 @@ const dev = {
   },
   db: {},
   resource: '../views',
-  port: 3000
+  port: 3000,
+  prefix: '/api/v0'
 };
 
 export default dev;

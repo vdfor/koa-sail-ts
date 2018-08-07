@@ -20,7 +20,8 @@ const prod = {
   },
   db: {},
   resource: '../views',
-  port: 8181
+  port: 8181,
+  prefix: '/v0'
 };
 
 export default prod;

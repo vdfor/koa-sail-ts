@@ -5,7 +5,7 @@ const router = new Router();
 
 const { routes } = config;
 
-router.prefix('/api/v0');
+router.prefix(config.prefix);
 
 Object.keys(routes).forEach(k => {
   const keys = Object.keys(routes[k]);
