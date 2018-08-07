@@ -1,8 +1,6 @@
 import * as Router from 'koa-router';
-// import auth from '../middleware/auth';
 import validator from '../middleware/validator';
-import testCtrl from '../controller/test';
-import userCtrl from '../controller/user';
+import { testCtrl, userCtrl, otherDataGridCtrl } from '../controller';
 
 interface AppRoutes {
   [key: string]: {
@@ -14,6 +12,7 @@ interface AppRoutes {
 }
 
 const routes: AppRoutes = {
+
   '/test': {
     get: {
       action: testCtrl.index,
@@ -24,6 +23,7 @@ const routes: AppRoutes = {
       policies: []
     }
   },
+
   '/user': {
     get: {
       action: userCtrl.find,
@@ -33,6 +33,13 @@ const routes: AppRoutes = {
   '/user/:id': {
     get: {
       action: userCtrl.findOne,
+      policies: []
+    }
+  },
+
+  '/other/data-grid': {
+    get: {
+      action: otherDataGridCtrl.index,
       policies: []
     }
   }

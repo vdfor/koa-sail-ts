@@ -4,6 +4,7 @@ import * as compress from 'koa-compress';
 import * as json from 'koa-json';
 import * as bodyparser from 'koa-bodyparser';
 import * as statics from 'koa-static';
+import * as cors from '@koa/cors';
 import config from './config';
 import logging from './middleware/logging';
 // apis
@@ -30,6 +31,9 @@ app.use(compress({
   threshold: 1024, // 大于1kb开启压缩
   flush: require('zlib').Z_SYNC_FLUSH
 }));
+
+// cors
+app.use(cors());
 
 // json
 app.use(json());
