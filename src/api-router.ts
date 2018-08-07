@@ -3,9 +3,9 @@ import config from './config';
 
 const router = new Router();
 
-const { routes } = config;
+const { routes, prefix } = config;
 
-router.prefix(config.prefix);
+router.prefix(prefix);
 
 Object.keys(routes).forEach(k => {
   const keys = Object.keys(routes[k]);
