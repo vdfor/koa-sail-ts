@@ -1,6 +1,6 @@
 import * as Router from 'koa-router';
 import validator from '../middleware/validator';
-import { testCtrl, userCtrl, otherDataGridCtrl } from '../controller';
+import { testCtrl, userCtrl, otherDataGridCtrl, reactSailUserCtrl } from '../controller';
 
 interface AppRoutes {
   [key: string]: {
@@ -35,6 +35,27 @@ const routes: AppRoutes = {
       action: userCtrl.findOne,
       policies: []
     }
+  },
+
+  '/react-sail/user': {
+    get: {
+      action: reactSailUserCtrl.find,
+      policies: [validator({ query: ['current', 'pageSize'] })]
+    }
+  },
+  '/react-sail/user/:id': {
+    get: {
+      action: reactSailUserCtrl.findOne,
+      policies: []
+    },
+    patch: {
+      action: reactSailUserCtrl.update,
+      policies: []
+    },
+    delete: {
+      action: reactSailUserCtrl.drop,
+      policies: []
+    },
   },
 
   '/other/data-grid': {
