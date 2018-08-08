@@ -3,7 +3,6 @@ echo 'start...'
 git fetch --all  
 git reset --hard origin/master
 rm -rf node_modules
-npm i yarn -g # 安装yarn
 yarn install
 yarn run build
 docker stop koa-sail-ts
