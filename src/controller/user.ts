@@ -1,6 +1,7 @@
 import * as Koa from 'koa';
-import { signToken } from '../utils/tools';
-import passport from '../utils/passport';
+import { passport, tools } from '../utils';
+
+const { signToken } = tools;
 
 class UserController {
   static login(ctx: Koa.Context) {
