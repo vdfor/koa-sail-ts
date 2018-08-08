@@ -15,9 +15,11 @@ COPY . /usr/src/app
 # 编译运行node项目，npm安装依赖,利用镜像
 # WORKDIR /usr/src/node/website
 # for china
-RUN npm i --production --registry=https://registry.npm.taobao.org 
+RUN npm i yarn -g --registry=https://registry.npm.taobao.org
+RUN yarn install --production --registry=https://registry.npm.taobao.org 
 # # for global
-# RUN npm i --production
+# RUN npm i yarn -g
+# RUN yarn install --production
 
 # 暴露container的端口
 EXPOSE 8181

@@ -14,8 +14,8 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=development nodemon --exec ts-node ./src/index.ts",
-    "build": "npm run clean && tsc --project tsconfig.json",
-    "build:webpack": "npm run clean && webpack --config webpack.config.js --progress --color",
+    "build": "yarn run clean && tsc --project tsconfig.json",
+    "build:webpack": "yarn run clean && webpack --config webpack.config.js --progress --color",
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
     "lint:check": "tslint -p tsconfig.json -c tslint.json ./src/**/*.ts",
