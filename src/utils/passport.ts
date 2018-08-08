@@ -1,6 +1,6 @@
 import * as passport from 'koa-passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { getEncryptedPasswd } from './helpers';
+import { getEncryptedPasswd } from './tools';
 
 // submit data(strategy)
 passport.use(new LocalStrategy(

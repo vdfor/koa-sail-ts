@@ -1,5 +1,5 @@
 import * as Koa from 'koa';
-import { signToken } from '../utils/helpers';
+import { signToken } from '../utils/tools';
 import passport from '../utils/passport';
 
 class UserController {

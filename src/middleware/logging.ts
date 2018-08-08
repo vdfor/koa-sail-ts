@@ -1,5 +1,5 @@
 import * as Koa from 'koa';
-import getLogger from '../utils/logger';
+import { logger as getLogger } from '../utils';
 
 const logger = getLogger('app');
 

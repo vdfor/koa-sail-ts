@@ -1,5 +1,7 @@
 import * as Koa from 'koa';
-import { decodeToken, getToken } from '../utils/helpers';
+import { tools } from '../utils';
+
+const { decodeToken, getToken } = tools;
 
 const auth = async (ctx: Koa.Context, next: Function) => {
   // get token from ctx.request

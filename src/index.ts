@@ -3,8 +3,9 @@ import * as http from 'http';
 import app from './app';
 import wsListener from './websocket';
 import config from './config';
-import logger from './utils/logger';
-import { normalizePort } from './utils/helpers';
+import { logger, tools } from './utils';
+
+const { normalizePort } = tools;
 
 // get port from environment
 const port = normalizePort(config.port);
@@ -55,7 +56,7 @@ wsListener(server);
 
 // listen on provided port, on all network interfacesListen on provided port, on all network interfaces
 server.listen(port, () => {
-  logger('startup').info('Server listening on port ', server.address().port, ' with pid ', process.pid);
+  logger('startup').info('Server listening on port ', port, ' with pid ', process.pid);
 });
 server.on('error', onError);
 server.on('listening', onListening);

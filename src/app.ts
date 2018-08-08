@@ -6,7 +6,7 @@ import * as bodyparser from 'koa-bodyparser';
 import * as statics from 'koa-static';
 import * as cors from '@koa/cors';
 import config from './config';
-import logging from './middleware/logging';
+import { logging } from './middleware';
 // apis
 import apis from './api-router';
 
