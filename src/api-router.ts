@@ -65,7 +65,7 @@ const routes: AppRoutes = {
 
   '/other/data-grid': {
     get: {
-      action: otherDataGridCtrl.index,
+      action: otherDataGridCtrl.indexNew,
       policies: []
     }
   }
