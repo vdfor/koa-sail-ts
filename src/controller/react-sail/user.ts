@@ -13,7 +13,7 @@ class Controller {
         id: i,
         code: Math.floor(Math.random() * 100),
         name: name ? `${name}${i}` : `Name${i}`,
-        sex: sex ? (+sex === 1 ? '男' : '女') : (i % 2 ? '男' : '女'),
+        sex: sex ? (+sex === 1 ? 'male' : 'female') : (i % 2 ? 'male' : 'female'),
         createAt: Date.now() - i * 1000 * 60 * 60 * 25
       });
     }
@@ -26,15 +26,15 @@ class Controller {
   static async findOne(ctx: Koa.Context) {
     const { id: i } = ctx.params;
     ctx.body = {
-      id: i,
+      id: +i,
       code: Math.floor(Math.random() * 100),
       name: `Name${i}`,
-      sex: i % 2 ? '男' : '女',
+      sex: +i % 2 ? 'male' : 'female',
       website: `https//${i}.example.com`,
-      qq: '1234567890' + i,
-      github: 'https://github.com/example' + i,
       mobile: '1868888888' + i,
       email: 'example' + i + '@example.com',
+      ipRules: +i % 2 ? '192.168.31.5,192.168.31.59~100' : '0.0.0.0',
+      arpu: Math.floor(Math.random() * 1000),
       note: '备注信息' + i,
       createAt: Date.now() - i * 1000 * 60 * 60 * 25
     };
