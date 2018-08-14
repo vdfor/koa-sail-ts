@@ -36,7 +36,7 @@ class Controller {
       mobile: '1868888888' + i,
       email: 'example' + i + '@example.com',
       note: '备注信息' + i,
-      ceateAt: Date.now() - i * 1000 * 60 * 60 * 25
+      createAt: Date.now() - i * 1000 * 60 * 60 * 25
     };
   }
 
