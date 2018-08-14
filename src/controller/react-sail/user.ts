@@ -14,7 +14,7 @@ class Controller {
         code: Math.floor(Math.random() * 100),
         name: name ? `${name}${i}` : `Name${i}`,
         sex: sex ? (+sex === 1 ? '男' : '女') : (i % 2 ? '男' : '女'),
-        ceateAt: Date.now() - i * 1000 * 60 * 60 * 25
+        createAt: Date.now() - i * 1000 * 60 * 60 * 25
       });
     }
     ctx.body = {
