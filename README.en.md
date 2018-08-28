@@ -54,6 +54,7 @@ docker build -t <image-name>:<tag> .
 ```bash
 #!/bin/bash
 echo 'start...'
+rm -rf node_modules
 yarn install
 yarn run build
 docker stop koa-sail-ts
