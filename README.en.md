@@ -50,6 +50,21 @@ npm run prod
 docker build -t <image-name>:<tag> .
 ```
 
+### For CI command
+```bash
+#!/bin/bash
+echo 'start...'
+yarn install
+yarn run build
+docker stop koa-sail-ts
+docker rm koa-sail-ts
+docker rmi koa-sail-ts:0.8
+docker build -t koa-sail-ts:0.8 .
+docker run --name koa-sail-ts -p 8183:8181 -v /home/docker/koa-sail-ts/logs:/usr/src/app/logs -d koa-sail-ts:0.8
+echo 'finished'
+exit 0
+```
+
 ## Feature
 + Use `typescript`
 + Construct restful api by [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
