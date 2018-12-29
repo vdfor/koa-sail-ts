@@ -1,7 +1,7 @@
 import * as Router from 'koa-router';
 import config from './config';
 import { validator } from './middleware';
-import { testCtrl, userCtrl, otherDataGridCtrl, reactSailUserCtrl } from './controller';
+import { testCtrl, userCtrl } from './controller';
 
 const router = new Router();
 
@@ -40,35 +40,8 @@ const routes: AppRoutes = {
       action: userCtrl.findOne,
       policies: []
     }
-  },
-
-  '/react-sail/user': {
-    get: {
-      action: reactSailUserCtrl.find,
-      policies: [validator({ query: ['current', 'pageSize'] })]
-    }
-  },
-  '/react-sail/user/:id': {
-    get: {
-      action: reactSailUserCtrl.findOne,
-      policies: []
-    },
-    patch: {
-      action: reactSailUserCtrl.update,
-      policies: []
-    },
-    delete: {
-      action: reactSailUserCtrl.drop,
-      policies: []
-    },
-  },
-
-  '/other/data-grid': {
-    get: {
-      action: otherDataGridCtrl.indexNew,
-      policies: []
-    }
   }
+  
 };
 
 router.prefix(prefix);

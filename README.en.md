@@ -11,17 +11,17 @@ The seed of [koa](https://github.com/koajs/koa)(2.x) with `typescript`
 ## Usage
 ### Quick start(development)
 ```bash
-npm i
+yarn
 # use ts-node
-npm start
+yarn start
 ```
 
 ### Test and lint
 ```bash
-# first run `npm start`
-npm run test
+# first run `yarn start`
+yarn test
 # lint
-npm run lint:check
+yarn run lint:check
 ```
 
 ### Config
@@ -31,21 +31,21 @@ Refer to [config-document](docs/config-document.md)
 
 ```bash
 # build by tsc
-npm run build
+yarn run build
 # build by webpack
-npm run build:webpack
+yarn run build:webpack
 ```
 
 ### Production
 ```bash
-# if not pm2, please run `npm i pm2 -g`
-# first run `npm run build` or `npm run build:webpack`
-npm run prod
+# if not pm2, please run `yarn global add pm2`
+# first run `yarn run build` or `yarn run build:webpack`
+yarn run prod
 ```
 
 ### With [docker](https://www.docker.com)
 ```bash
-# first run `npm run build` or `npm run build:webpack`
+# first run `yarn run build` or `yarn run build:webpack`
 # build docker image
 docker build -t <image-name>:<tag> .
 ```

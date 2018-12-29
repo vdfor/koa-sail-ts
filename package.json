@@ -19,7 +19,7 @@
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
     "lint:check": "tslint -p tsconfig.json -c tslint.json ./src/**/*.ts",
-    "test": "NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts",
+    "test": "cross-env NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts",
     "clean": "rm -rf build"
   },
   "dependencies": {

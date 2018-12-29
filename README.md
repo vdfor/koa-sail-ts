@@ -11,17 +11,17 @@
 ## 使用方法
 ### 快速开始(开发环境)
 ```bash
-npm i
+yarn
 # use ts-node
-npm start
+yarn start
 ```
 
 ### 测试与检查
 ```bash
-# 单元测试 first run `npm start`
-npm run test
+# 单元测试 first run `yarn start`
+yarn test
 # 代码规范检查
-npm run lint:check
+yarn run lint:check
 ```
 
 ### 配置
@@ -33,21 +33,21 @@ npm run lint:check
 
 ```bash
 # build by tsc
-npm run build
+yarn run build
 # build by webpack
-npm run build:webpack
+yarn run build:webpack
 ```
 
 ### 用于生产环境
 ```bash
-# if not pm2, please run `npm i pm2 -g`
-# first run `npm run build` or `npm run build:webpack`
-npm run prod
+# if not pm2, please run `yarn global add pm2`
+# first run `yarn run build` or `yarn run build:webpack`
+yarn run prod
 ```
 
 ### 搭配[docker](https://www.docker.com)
 ```bash
-# first run `npm run build` or `npm run build:webpack`
+# first run `yarn run build` or `yarn run build:webpack`
 # 生成docker镜像
 docker build -t <image-name>:<tag> .
 ```
