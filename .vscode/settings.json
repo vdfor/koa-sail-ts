@@ -1,0 +1,5 @@
+{
+  "editor.tabSize": 2,
+  "tslint.autoFixOnSave": true,
+  "tslint.packageManager": "yarn"
+}

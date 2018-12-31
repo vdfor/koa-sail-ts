@@ -15,7 +15,7 @@
       "args": [
         "${workspaceRoot}/src/index.ts" // enter
       ],
-      "cwd": "${workspaceFolder}",
+      "cwd": "${workspaceRoot}",
       "protocol": "inspector"
     }
   ]

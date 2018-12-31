@@ -1,14 +1,10 @@
 {
   "restartable": "rs",
-  "watch": ["src/**/*.ts"],
+  "watch": [
+    "src/**/*.ts"
+  ],
   "ignore": [
-    ".git",
-    ".svn",
-    "/logs",
-    "/build",
-    "/config",
-    "src/**/*.spec.ts",
-    "node_modules/**/node_modules"
+    "node_modules"
   ],
   "verbose": true,
   "env": {
