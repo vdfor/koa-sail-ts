@@ -54,6 +54,7 @@ docker build -t <image-name>:<tag> .
 
 ### For CI command
 ```bash
+# this is an example
 #!/bin/bash
 echo 'start...'
 yarn install
@@ -88,7 +89,6 @@ exit 0
 + 支持静态资源，请参考[koa下多spa项目部署](https://github.com/vdfor/docs/blob/master/node.js/koa%E4%B8%8B%E5%A4%9Aspa%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2.md)
 + 搭配mysql使用，请参考[mysql入门](https://github.com/vdfor/docs/blob/master/MySQL%E5%85%A5%E9%97%A8.md)的`koa with mysql`部分
 + 搭配mongodb使用，请参考[mongodb入门](https://github.com/vdfor/docs/blob/master/MongoDB%E5%85%A5%E9%97%A8.md)的`koa with mongodb`部分
-+ [用户登录与访问权限控制设计](https://github.com/vdfor/docs/blob/master/%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6%E8%AE%BE%E8%AE%A1.md)
 
 ## 致谢
 本项目的诞生与发展离不开`koa`、`log4js`、`jsonwebtoken`、`typescript`等项目,具体见[package.json](package.json)的`dependencies`与`devDependencies`。
