@@ -11,12 +11,12 @@ const router = new Router();
 
 const { prefix } = config;
 
-router.prefix(prefix);
+// router.prefix(prefix);
 
 Object.keys(apis).forEach(k => {
   (apis as IApis)[k].forEach(api => {
-    const { action, method, path, policies } = api;
-    (router as any)[method](path, ...(policies || []), action);
+    const { action, method, path, policies, prefix: customPrefix } = api;
+    router[method]((customPrefix || prefix) + path, ...(policies || []), action);
   });
 });
 

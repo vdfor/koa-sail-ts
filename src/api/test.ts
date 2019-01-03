@@ -5,6 +5,7 @@ const testApi: IApi[] = [
   {
     method: 'get',
     path: '/test',
+    prefix: '/api/v1',
     action: (ctx: Koa.Context) => {
       ctx.body = {
         title: 'Hello, Test!'
