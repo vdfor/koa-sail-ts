@@ -1,8 +1,8 @@
-import * as WebSocket from 'ws';
 import * as http from 'http';
+import * as WebSocket from 'ws';
 import { logger } from '../utils';
 
-interface Ws extends WebSocket {
+interface IWs extends WebSocket {
   query?: { [key: string]: string | any };
   isAlive?: boolean;
 }
@@ -14,7 +14,7 @@ const wsListener = (server: http.Server) => {
   const wss = new WebSocket.Server({ server, path: '/ws' });
 
   // connection
-  wss.on('connection', (ws: Ws, req) => {
+  wss.on('connection', (ws: IWs, req) => {
 
     logger('websocket').info(`Successful connection with ${req.connection.remoteAddress}${req.url}`);
 
@@ -55,7 +55,7 @@ const wsListener = (server: http.Server) => {
   // interval heartbeat ping
   setInterval(
     () => {
-      wss.clients.forEach((ws: Ws) => {
+      wss.clients.forEach((ws: IWs) => {
         if (!ws.isAlive) {
           ws.terminate();
           return;

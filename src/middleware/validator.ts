@@ -1,13 +1,13 @@
 import * as Koa from 'koa';
 
-interface Options {
-  query?: Array<string>;
-  body?: Array<string>;
+interface IOptions {
+  query?: string[];
+  body?: string[];
 }
 
-const validator = (opts: Options) => {
+const validator = (opts: IOptions) => {
 
-  return async (ctx: Koa.Context, next: Function) => {
+  return async (ctx: Koa.Context, next: () => void) => {
 
     if (opts.query) {
       opts.query.forEach(ele => {

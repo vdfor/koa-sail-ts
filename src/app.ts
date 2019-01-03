@@ -1,14 +1,14 @@
+import * as cors from '@koa/cors';
 import * as Koa from 'koa';
-import * as path from 'path';
+import * as bodyparser from 'koa-bodyparser';
 import * as compress from 'koa-compress';
 import * as json from 'koa-json';
-import * as bodyparser from 'koa-bodyparser';
 import * as statics from 'koa-static';
-import * as cors from '@koa/cors';
-import config from './config';
-import { logging } from './middleware';
+import * as path from 'path';
 // apis
 import apis from './api-router';
+import config from './config';
+import { logging } from './middleware';
 
 // app
 const app = new Koa();

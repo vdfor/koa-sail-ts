@@ -1,9 +1,9 @@
 //  module dependencies
 import * as http from 'http';
 import app from './app';
-import wsListener from './websocket';
 import config from './config';
 import { logger, tools } from './utils';
+import wsListener from './websocket';
 
 const { normalizePort } = tools;
 

@@ -3,7 +3,7 @@ import { tools } from '../utils';
 
 const { decodeToken, getToken } = tools;
 
-const auth = async (ctx: Koa.Context, next: Function) => {
+const auth = async (ctx: Koa.Context, next: () => void) => {
   // get token from ctx.request
   const token = getToken(ctx.request);
   if (token) {

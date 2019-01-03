@@ -3,7 +3,7 @@ import { logger as getLogger } from '../utils';
 
 const logger = getLogger('app');
 
-const logging = () => async (ctx: Koa.Context, next: Function) => {
+const logging = () => async (ctx: Koa.Context, next: () => void) => {
   try {
     const start = Date.now();
     await next();
