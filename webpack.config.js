@@ -28,6 +28,16 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
+        enforce: 'pre',
+        exclude: /node_modules/,
+        include: [resolveApp('src')],
+        loader: require.resolve('eslint-loader'),
+        options: {
+          eslintPath: require.resolve('eslint')
+        }
+      },
+      {
+        test: /\.ts$/,
         exclude: /node_modulss/,
         include: resolveApp('src'),
         use: require.resolve('ts-loader')

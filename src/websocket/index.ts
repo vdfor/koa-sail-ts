@@ -9,15 +9,14 @@ interface IWs extends WebSocket {
 
 // ws listener
 const wsListener = (server: http.Server) => {
-
   // new ws server
   const wss = new WebSocket.Server({ server, path: '/ws' });
 
   // connection
-  wss.on('connection', (ws: IWs, req) => {
-
+  wss.on('connection', (initWs: IWs, req) => {
     logger('websocket').info(`Successful connection with ${req.connection.remoteAddress}${req.url}`);
 
+    const ws = initWs;
     // ws from
     const urlFrom = req && req.url && req.url.match(/\?from=([^&]*)/);
     ws.query = {};
@@ -55,7 +54,8 @@ const wsListener = (server: http.Server) => {
   // interval heartbeat ping
   setInterval(
     () => {
-      wss.clients.forEach((ws: IWs) => {
+      wss.clients.forEach((initWs: IWs) => {
+        const ws = initWs;
         if (!ws.isAlive) {
           ws.terminate();
           return;
@@ -66,7 +66,8 @@ const wsListener = (server: http.Server) => {
         });
       });
     },
-    30000);
+    30000
+  );
 };
 
 export default wsListener;

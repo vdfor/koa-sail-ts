@@ -8,13 +8,12 @@ export const getEncryptedPasswd = (passwd: string) => crypto.createHash('sha256'
 export const getToken = (req: Koa.Request) => {
   if (req && req.body && req.body.access_token) {
     return req.body.access_token;
-  } else if (req && req.query && req.query.access_token) {
+  } if (req && req.query && req.query.access_token) {
     return req.query.access_token;
-  } else if (req && req.headers.authorization) {
+  } if (req && req.headers.authorization) {
     return req.headers.authorization.split(' ')[1];
-  } else { // Not access_token found
-    return null;
-  }
+  } // Not access_token found
+  return null;
 };
 
 export const decodeToken = (token: string) => new Promise((resolve, reject) => {
@@ -24,7 +23,8 @@ export const decodeToken = (token: string) => new Promise((resolve, reject) => {
     if (typeof decoded === 'object' && decoded.user) {
       // const cacheToken = cache.get(`user-${decoded.user.id}-${token}`);
       // return cacheToken ? decoded.user.id : null;
-      return resolve(decoded.user);
+      resolve(decoded.user);
+      return;
     }
     reject(new Error('No uid payload in access_token'));
   } catch (error) {

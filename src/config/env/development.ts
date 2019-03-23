@@ -3,7 +3,7 @@ const dev = {
   log4js: {
     appenders: {
       sail: {
-        type: 'console',
+        type: 'console'
       }
     },
     categories: {

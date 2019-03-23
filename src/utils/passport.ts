@@ -21,6 +21,7 @@ passport.use(new LocalStrategy(
       return;
     }
     done(null, false, { message: 'incorrect' });
-  })));
+  })
+));
 
 export default passport;

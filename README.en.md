@@ -20,8 +20,10 @@ yarn start
 ```bash
 # first run `yarn start`
 yarn test
-# lint
-yarn run lint:check
+# lint:check
+yarn run eslint:check
+# lint:fix
+yarn run eslint:fix
 ```
 
 ### Config

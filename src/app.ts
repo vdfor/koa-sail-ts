@@ -5,6 +5,7 @@ import * as compress from 'koa-compress';
 import * as json from 'koa-json';
 import * as statics from 'koa-static';
 import * as path from 'path';
+import * as zlib from 'zlib';
 // apis
 import apis from './api-router';
 import config from './config';
@@ -29,7 +30,7 @@ app.use(compress({
     return /text|javascript|json/i.test(contentType);
   },
   threshold: 1024, // 大于1kb开启压缩
-  flush: require('zlib').Z_SYNC_FLUSH
+  flush: zlib.Z_SYNC_FLUSH
 }));
 
 // cors

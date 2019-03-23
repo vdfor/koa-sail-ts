@@ -1,6 +1,6 @@
 {
   "name": "koa-sail-ts",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
@@ -18,7 +18,8 @@
     "build:webpack": "yarn run clean && webpack --config webpack.config.js --progress --color",
     "prod": "NODE_ENV=production pm2 start --name koaSail ./build/index.js",
     "prod_docker": "NODE_ENV=production node ./build/index.js",
-    "lint:check": "tslint -p tsconfig.json -c tslint.json ./src/**/*.ts",
+    "eslint:check": "eslint src --ext .ts",
+    "eslint:fix": "eslint src --fix --ext .ts",
     "test": "cross-env NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts",
     "clean": "rm -rf build"
   },
@@ -51,7 +52,13 @@
     "@types/passport-local": "^1.0.33",
     "@types/supertest": "^2.0.4",
     "@types/ws": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
     "cross-env": "^5.1.4",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.16.0",
     "externals-dependencies": "^1.0.4",
     "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
@@ -59,8 +66,6 @@
     "ts-loader": "^4.2.0",
     "ts-node": "^7.0.1",
     "tsconfig-paths-webpack-plugin": "^3.0.4",
-    "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.17.0",
     "typescript": "^3.2.2",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"

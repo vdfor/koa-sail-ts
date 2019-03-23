@@ -21,7 +21,9 @@ yarn start
 # 单元测试 first run `yarn start`
 yarn test
 # 代码规范检查
-yarn run lint:check
+yarn run eslint:check
+# 代码规范修复
+yarn run eslint:fix
 ```
 
 ### 配置
