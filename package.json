@@ -24,6 +24,7 @@
     "clean": "rm -rf build"
   },
   "dependencies": {
+    "@babel/runtime": "^7.4.4",
     "@koa/cors": "^2.2.2",
     "jsonwebtoken": "^8.2.1",
     "koa": "^2.5.1",
@@ -38,6 +39,12 @@
     "ws": "^5.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
     "@types/jsonwebtoken": "^7.2.6",
     "@types/koa": "^2.0.45",
     "@types/koa-bodyparser": "^4.2.0",
@@ -54,6 +61,7 @@
     "@types/ws": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^1.5.0",
     "@typescript-eslint/parser": "^1.5.0",
+    "babel-loader": "^8.0.5",
     "cross-env": "^5.1.4",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",

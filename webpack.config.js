@@ -5,6 +5,7 @@ const fs = require('fs');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const _externals = require('externals-dependencies');
 
+const nodeEnv = process.env.NODE_ENV || 'development';
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
@@ -38,9 +39,22 @@ module.exports = {
       },
       {
         test: /\.ts$/,
-        exclude: /node_modulss/,
-        include: resolveApp('src'),
-        use: require.resolve('ts-loader')
+        exclude: /node_modules/,
+        include: [resolveApp('src')],
+        loader: require.resolve('babel-loader'),
+        options: {
+          babelrc: false,
+          configFile: false,
+          presets: [require.resolve('@babel/preset-env'), require.resolve('@babel/preset-typescript')],
+          plugins: [
+            require.resolve('@babel/plugin-transform-runtime'),
+            require.resolve('@babel/plugin-proposal-class-properties'),
+            require.resolve('@babel/plugin-proposal-object-rest-spread')
+          ],
+          cacheDirectory: true,
+          cacheCompression: nodeEnv === 'production',
+          compact: nodeEnv === 'production'
+        },
       }
     ]
   },

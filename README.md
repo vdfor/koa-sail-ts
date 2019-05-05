@@ -80,7 +80,7 @@ exit 0
 + 单元测试(powered by [mocha](https://mochajs.org/))
 + 支持`docker`部署
 
-## 未来计划
+## 计划
 + 功能模块化定制
 + ...
 

@@ -79,8 +79,7 @@ exit 0
 + Unit test(powered by [mocha](https://mochajs.org/))
 + `Docker` supported
 
-## Future
-+ Params validator for apis
+## Plan
 + Function module customization
 + ...
 
