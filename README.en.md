@@ -71,7 +71,6 @@ exit 0
 
 ## Feature
 + Use `typescript`
-+ Construct restful api by [class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 + Use [pm2](http://pm2.keymetrics.io) as `nodejs` process manager
 + Login and api authorization(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
 + Api params validator [validator-document](docs/validator-document.md)
@@ -97,4 +96,6 @@ The project's birth and development is inseparable from `koa`, `log4js`, `jsonwe
 
 The project initially generated with [koa-generator](https://github.com/17koa/koa-generator) with `javascript`, and switch to `typescript` since `0.4.0`. The project has undergone great change with the development of the project, but `koa-generator` is import for the birth of `koa-sail-ts`.
 
-Construct restful api by `class` since `0.7.0`, I referred to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x) branch.
+If you want to construct restful api by `class`, please refer to [0.8.x](https://github.com/vdfor/koa-sail-ts/tree/0.8.x) branch [The implementation refers to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)]. 
+
+If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x) branch.

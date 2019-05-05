@@ -72,7 +72,6 @@ exit 0
 
 ## 功能与特点
 + 采用`typescript`
-+ 基于[class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)类构建restful api
 + 采用[pm2](http://pm2.keymetrics.io)作为`nodejs`进程管理工具
 + 登录与api鉴权(powered by [passportjs](http://www.passportjs.org) and [jwt](https://github.com/auth0/node-jsonwebtoken))
 + 提供api参数校验中间件 [validator-document](docs/validator-document.md)
@@ -97,5 +96,7 @@ exit 0
 
 本项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4.0`之后切换到`typescript`。虽然随着项目的发展，已与最初相差甚大，但`koa-generator`对于本项目的起步十分重要。
 
-自`0.7.0`版本起，采用`class`类重新设计了api，参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)。如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x)分支
+如果你希望采用`class`类设计api，请参考本项目的[0.8.x](https://github.com/vdfor/koa-sail-ts/tree/0.8.x)分支【其实现参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)】。
+
+如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x)分支
 
