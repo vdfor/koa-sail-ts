@@ -1,16 +1,16 @@
 {
-  "name": "koa-sail-ts",
-  "version": "0.9.1",
+  "name": "pollux",
+  "version": "0.10.0",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vdfor/koa-sail-ts.git"
+    "url": "https://github.com/vdfor/pollux.git"
   },
   "bugs": {
-    "url": "https://github.com/vdfor/koa-sail-ts/issues"
+    "url": "https://github.com/vdfor/pollux/issues"
   },
-  "homepage": "https://github.com/vdfor/koa-sail-ts#readme",
+  "homepage": "https://github.com/vdfor/pollux#readme",
   "private": true,
   "scripts": {
     "start": "nodemon --exec ts-node ./src/index.ts",
