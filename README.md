@@ -84,13 +84,6 @@ exit 0
 + 功能模块化定制
 + ...
 
-## 相关文档
-使用`koa-sail-ts`构建应用时，以下文档可能是你需要的：
-
-+ 支持静态资源，请参考[koa下多spa项目部署](https://github.com/vdfor/docs/blob/master/node.js/koa%E4%B8%8B%E5%A4%9Aspa%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2.md)
-+ 搭配mysql使用，请参考[mysql入门](https://github.com/vdfor/docs/blob/master/MySQL%E5%85%A5%E9%97%A8.md)的`koa with mysql`部分
-+ 搭配mongodb使用，请参考[mongodb入门](https://github.com/vdfor/docs/blob/master/MongoDB%E5%85%A5%E9%97%A8.md)的`koa with mongodb`部分
-
 ## 致谢
 本项目的诞生与发展离不开`koa`、`log4js`、`jsonwebtoken`、`typescript`等项目,具体见[package.json](package.json)的`dependencies`与`devDependencies`。
 

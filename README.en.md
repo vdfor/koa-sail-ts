@@ -83,13 +83,6 @@ exit 0
 + Function module customization
 + ...
 
-## Document related
-There are docs may be you need when you developing web app with `koa-sail-ts`：
-
-+ koa as static-server, refer to [koa下多spa项目部署](https://github.com/vdfor/docs/blob/master/node.js/koa%E4%B8%8B%E5%A4%9Aspa%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2.md)
-+ koa with mysql, refer to the part `koa with mysql` of [mysql入门](https://github.com/vdfor/docs/blob/master/MySQL%E5%85%A5%E9%97%A8.md)
-+ koa with mongodb, refer to the part `koa with mongodb` of [mongodb入门](https://github.com/vdfor/docs/blob/master/MongoDB%E5%85%A5%E9%97%A8.md)
-
 ## Thanks
 The project's birth and development is inseparable from `koa`, `log4js`, `jsonwebtoken`, `typescript`, and so on. For detail, refer to the part `dependencies` and `devDependencies` of [package.json](package.json).
 
