@@ -34,7 +34,7 @@
     "koa-passport": "^4.0.1",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.3",
-    "log4js": "^2.5.3",
+    "log4js": "^4.5.1",
     "passport-local": "^1.0.0",
     "ws": "^5.1.1"
   },
