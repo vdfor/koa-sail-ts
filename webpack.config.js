@@ -13,7 +13,7 @@ module.exports = {
   mode: 'production',
   // Don't attempt to continue if there are any errors.
   bail: true,
-  devtool: 'inline-source-map',
+  devtool: nodeEnv === 'production' ? false : 'inline-source-map',
   entry: resolveApp('src/index.ts'),
   output: {
     path: resolveApp('build'),
@@ -44,16 +44,7 @@ module.exports = {
         loader: require.resolve('babel-loader'),
         options: {
           babelrc: false,
-          configFile: false,
-          presets: [require.resolve('@babel/preset-env'), require.resolve('@babel/preset-typescript')],
-          plugins: [
-            require.resolve('@babel/plugin-transform-runtime'),
-            require.resolve('@babel/plugin-proposal-class-properties'),
-            require.resolve('@babel/plugin-proposal-object-rest-spread')
-          ],
-          cacheDirectory: true,
-          cacheCompression: nodeEnv === 'production',
-          compact: nodeEnv === 'production'
+          configFile: true
         },
       }
     ]

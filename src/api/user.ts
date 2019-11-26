@@ -1,4 +1,4 @@
-import * as Koa from 'koa';
+import { RouterContext } from 'koa-router';
 import { validator } from '../middleware';
 import { IApi } from './type';
 
@@ -7,7 +7,7 @@ const userApi: IApi[] = [
     method: 'get',
     path: '/user',
     policies: [validator({ query: ['role'] })],
-    action: (ctx: Koa.Context) => {
+    action: (ctx: RouterContext) => {
       const { role } = ctx.query;
       ctx.body = [
         { id: 1, name: 'John', role },
@@ -19,7 +19,7 @@ const userApi: IApi[] = [
   { // findOne
     method: 'get',
     path: '/user/:id',
-    action: (ctx: Koa.Context) => {
+    action: (ctx: RouterContext) => {
       // console.log(ctx.router.stack.map((i: any) => i.regexp));
       const { id } = ctx.params;
       ctx.body = {

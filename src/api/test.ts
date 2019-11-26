@@ -1,4 +1,4 @@
-import * as Koa from 'koa';
+import { RouterContext } from 'koa-router';
 import { IApi } from './type';
 
 const testApi: IApi[] = [
@@ -6,7 +6,7 @@ const testApi: IApi[] = [
     method: 'get',
     path: '/test',
     prefix: '/api/v1',
-    action: (ctx: Koa.Context) => {
+    action: (ctx: RouterContext) => {
       ctx.body = {
         title: 'Hello, Test!'
       };

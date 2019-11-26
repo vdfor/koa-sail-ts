@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
+import { RouterContext } from 'koa-router';
 import { tools } from '../utils';
 
 const { decodeToken, getToken } = tools;
 
-const auth = async (ctx: Koa.Context, next: () => void) => {
+const auth = async (ctx: RouterContext, next: () => void) => {
   // get token from ctx.request
   const token = getToken(ctx.request);
   if (token) {

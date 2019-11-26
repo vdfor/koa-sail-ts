@@ -1,11 +1,11 @@
-import * as Koa from 'koa';
+import { RouterContext } from 'koa-router';
 
 interface IOptions {
   query?: string[];
   body?: string[];
 }
 
-const validator = (opts: IOptions) => async (ctx: Koa.Context, next: () => void) => {
+const validator = (opts: IOptions) => async (ctx: RouterContext, next: () => void) => {
   if (opts.query) {
     opts.query.forEach((ele) => {
       if (!ctx.query[ele]) {

@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
+import { RouterContext } from 'koa-router';
 import { logger as getLogger } from '../utils';
 
 const logger = getLogger('app');
 
-const logging = () => async (ctx: Koa.Context, next: () => void) => {
+const logging = () => async (ctx: RouterContext, next: () => void) => {
   try {
     const start = Date.now();
     await next();

@@ -17,7 +17,7 @@
     "rootDir": "./src",
     "strict": true,
     "strictNullChecks": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "es2017"
   },
   "include": [
