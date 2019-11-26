@@ -80,16 +80,12 @@ exit 0
 + 单元测试(powered by [mocha](https://mochajs.org/))
 + 支持`docker`部署
 
-## 计划
-+ 功能模块化定制
-+ ...
-
 ## 致谢
 本项目的诞生与发展离不开`koa`、`log4js`、`jsonwebtoken`、`typescript`等项目,具体见[package.json](package.json)的`dependencies`与`devDependencies`。
 
 本项目最初由[koa-generator](https://github.com/17koa/koa-generator)生成，最初采用`js`编写，`0.4.0`之后切换到`typescript`。虽然随着项目的发展，已与最初相差甚大，但`koa-generator`对于本项目的起步十分重要。
 
-如果你希望采用`class`类设计api，请参考本项目的[0.8.x](https://github.com/vdfor/koa-sail-ts/tree/0.8.x)分支【其实现参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)】。
+如果你希望采用`class`类设计api，请参考本项目的[0.8.x](https://github.com/vdfor/koa-sail-ts/releases/tag/v0.8.1)【其实现参考了[如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)】。
 
-如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x)分支
+如果你更喜欢[express](https://github.com/expressjs/express)风格的api，请参考本项目的[0.6.x](https://github.com/vdfor/koa-sail-ts/releases/tag/v0.6.3)
 

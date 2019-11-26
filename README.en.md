@@ -79,15 +79,11 @@ exit 0
 + Unit test(powered by [mocha](https://mochajs.org/))
 + `Docker` supported
 
-## Plan
-+ Function module customization
-+ ...
-
 ## Thanks
 The project's birth and development is inseparable from `koa`, `log4js`, `jsonwebtoken`, `typescript`, and so on. For detail, refer to the part `dependencies` and `devDependencies` of [package.json](package.json).
 
 The project initially generated with [koa-generator](https://github.com/17koa/koa-generator) with `javascript`, and switch to `typescript` since `0.4.0`. The project has undergone great change with the development of the project, but `koa-generator` is import for the birth of `koa-sail-ts`.
 
-If you want to construct restful api by `class`, please refer to [0.8.x](https://github.com/vdfor/koa-sail-ts/tree/0.8.x) branch [The implementation refers to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)]. 
+If you want to construct restful api by `class`, please refer to [0.8.x](https://github.com/vdfor/koa-sail-ts/releases/tag/v0.8.1) branch [The implementation refers to [如何使用koa2+es6/7打造高质量Restful API](https://zhuanlan.zhihu.com/p/26216336)]. 
 
-If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/tree/0.6.x) branch.
+If you prefer style like [express](https://github.com/expressjs/express), please refer to [0.6.x](https://github.com/vdfor/koa-sail-ts/releases/tag/v0.6.3) branch.

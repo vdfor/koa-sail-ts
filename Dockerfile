@@ -1,5 +1,5 @@
 # 设置基础镜像，若本地不存在基础镜像，会从远程服务器pull镜像
-FROM node:10.15-alpine
+FROM node:12.13-alpine
 
 # Author
 LABEL vdfor <jiakun.li@qq.com>
