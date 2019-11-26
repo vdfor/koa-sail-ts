@@ -2,6 +2,10 @@
   "editor.tabSize": 2,
   "eslint.validate": [
     {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
       "language": "typescript",
       "autoFix": true
     }

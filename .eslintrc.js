@@ -5,11 +5,11 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: [
-          '.ts', '.json', '.js'
-        ]
-      }
+          '.ts', '.json', '.js',
+        ],
+      },
     },
-    'import/extensions': ['.ts', '.js']
+    'import/extensions': ['.ts', '.js'],
   },
   plugins: ['@typescript-eslint'],
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'airbnb-base'],
@@ -22,6 +22,6 @@ module.exports = {
     'import/prefer-default-export': ['off'],
     'linebreak-style': ['off'],
     'max-len': ['error', 200],
-    'no-console': ['off']
-  }
+    'no-console': ['off'],
+  },
 };

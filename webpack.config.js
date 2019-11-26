@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const fs = require('fs');
@@ -17,14 +17,14 @@ module.exports = {
   entry: resolveApp('src/index.ts'),
   output: {
     path: resolveApp('dist'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   watch: nodeEnv === 'development',
   resolve: {
-    extensions: [".ts", ".js", ".json"],
+    extensions: ['.ts', '.js', '.json'],
     plugins: [
-      new TsconfigPathsPlugin({ configFile: resolveApp('tsconfig.json') })
-    ]
+      new TsconfigPathsPlugin({ configFile: resolveApp('tsconfig.json') }),
+    ],
   },
   module: {
     rules: [
@@ -35,8 +35,8 @@ module.exports = {
         include: [resolveApp('src')],
         loader: require.resolve('eslint-loader'),
         options: {
-          eslintPath: require.resolve('eslint')
-        }
+          eslintPath: require.resolve('eslint'),
+        },
       },
       {
         test: /\.ts$/,
@@ -45,10 +45,10 @@ module.exports = {
         loader: require.resolve('babel-loader'),
         options: {
           babelrc: false,
-          configFile: true
+          configFile: true,
         },
-      }
-    ]
+      },
+    ],
   },
   target: 'node',
   node: {
@@ -58,7 +58,7 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty',
     __dirname: true,
-    __filename: true
+    __filename: true,
   },
-  externals: _externals()
-}
+  externals: _externals(),
+};
