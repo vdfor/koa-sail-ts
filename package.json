@@ -20,7 +20,7 @@
     "prod_docker": "NODE_ENV=production node ./dist/index.js",
     "eslint:check": "eslint src --ext .ts",
     "eslint:fix": "eslint src --fix --ext .ts",
-    "clean": "node run script/clean.js",
+    "clean": "node script/clean.js",
     "test": "cross-env NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts"
   },
   "dependencies": {
