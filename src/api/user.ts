@@ -11,9 +11,9 @@ const userApi: IApi[] = [
       const { role } = ctx.query;
       ctx.body = [
         { id: 1, name: 'John', role },
-        { id: 2, name: 'Lucy', role }
+        { id: 2, name: 'Lucy', role },
       ];
-    }
+    },
   },
 
   { // findOne
@@ -25,10 +25,10 @@ const userApi: IApi[] = [
       ctx.body = {
         id,
         name: 'John',
-        age: Math.floor(Math.random() * 100)
+        age: Math.floor(Math.random() * 100),
       };
-    }
-  }
+    },
+  },
 ];
 
 export default userApi;

@@ -6,14 +6,14 @@ import { getEncryptedPasswd } from './tools';
 passport.use(new LocalStrategy(
   {
     usernameField: 'username',
-    passwordField: 'password'
+    passwordField: 'password',
   },
   (async (username, passwd, done) => {
     // get user info from db
     const dbUser = {
       id: 'testid',
       username: 'testname',
-      passwd: 'testpasswd'
+      passwd: 'testpasswd',
     };
     if (username === dbUser.username && getEncryptedPasswd(passwd) === dbUser.passwd) {
       const user = { id: dbUser.id, username: dbUser.username };
@@ -21,7 +21,7 @@ passport.use(new LocalStrategy(
       return;
     }
     done(null, false, { message: 'incorrect' });
-  })
+  }),
 ));
 
 export default passport;

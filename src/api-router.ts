@@ -14,7 +14,7 @@ const { prefix } = config;
 Object.keys(apis).forEach((k) => {
   (apis as IApis)[k].forEach((api) => {
     const {
-      action, method, path, policies, prefix: customPrefix
+      action, method, path, policies, prefix: customPrefix,
     } = api;
     router[method]((customPrefix || prefix) + path, ...(policies || []), action);
   });

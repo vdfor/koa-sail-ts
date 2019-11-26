@@ -3,22 +3,22 @@ const dev = {
   log4js: {
     appenders: {
       sail: {
-        type: 'console'
-      }
+        type: 'console',
+      },
     },
     categories: {
       default: {
         appenders: [
-          'sail'
+          'sail',
         ],
-        level: 'ALL'
-      }
-    }
+        level: 'ALL',
+      },
+    },
   },
   db: {},
   resource: '../views',
   port: 3000,
-  prefix: '/api/v0'
+  prefix: '/api/v0',
 };
 
 export default dev;

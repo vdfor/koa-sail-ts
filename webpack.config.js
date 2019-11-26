@@ -16,9 +16,10 @@ module.exports = {
   devtool: nodeEnv === 'production' ? false : 'inline-source-map',
   entry: resolveApp('src/index.ts'),
   output: {
-    path: resolveApp('build'),
+    path: resolveApp('dist'),
     filename: 'index.js'
   },
+  watch: nodeEnv === 'development',
   resolve: {
     extensions: [".ts", ".js", ".json"],
     plugins: [

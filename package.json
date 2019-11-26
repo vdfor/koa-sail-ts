@@ -1,6 +1,6 @@
 {
   "name": "koa-sail-ts",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "author": "vdfor",
   "license": "MIT",
   "repository": {
@@ -13,14 +13,15 @@
   "homepage": "https://github.com/vdfor/koa-sail-ts#readme",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec node --require ./babel-register.js ./src/index.ts",
-    "build": "tsc -p tsconfig.json",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress --color",
-    "prod": "cross-env NODE_ENV=production pm2 start --name koa-sail-ts ./build/index.js",
-    "prod_docker": "NODE_ENV=production node ./build/index.js",
+    "start": "nodemon --exec ts-node ./src/index.ts",
+    "build": "yarn run clean && tsc -p tsconfig.json",
+    "build:webpack": "yarn run clean && cross-env NODE_ENV=production webpack --config webpack.config.js --progress --color",
+    "prod": "cross-env NODE_ENV=production pm2 start --name koa-sail-ts ./dist/index.js",
+    "prod_docker": "NODE_ENV=production node ./dist/index.js",
     "eslint:check": "eslint src --ext .ts",
     "eslint:fix": "eslint src --fix --ext .ts",
-    "test": "cross-env NODE_ENV=development mocha --require ./babel-register.js ./test/**/*.spec.ts"
+    "clean": "node run script/clean.js",
+    "test": "cross-env NODE_ENV=development mocha --require ts-node/register ./test/**/*.spec.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
@@ -35,7 +36,6 @@
     "koa-static": "^4.0.3",
     "log4js": "^6.1.0",
     "passport-local": "^1.0.0",
-    "ts-node": "^8.5.2",
     "ws": "^5.1.1"
   },
   "devDependencies": {
@@ -45,7 +45,6 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@babel/register": "^7.7.4",
     "@types/jsonwebtoken": "^7.2.6",
     "@types/koa": "^2.0.45",
     "@types/koa-bodyparser": "^4.2.0",
@@ -69,9 +68,11 @@
     "eslint-loader": "^2.1.2",
     "eslint-plugin-import": "^2.16.0",
     "externals-dependencies": "^1.0.4",
+    "fs-extra": "^8.1.0",
     "mocha": "^5.1.1",
     "nodemon": "^2.0.1",
     "supertest": "^3.0.0",
+    "ts-node": "^8.5.2",
     "tsconfig-paths-webpack-plugin": "^3.0.4",
     "typescript": "^3.2.2",
     "webpack": "^4.28.2",

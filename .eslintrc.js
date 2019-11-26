@@ -1,15 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  // parserOptions: {
-  //   extraFileExtensions: ['ts']
-  // },
   root: true,
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    node: true
-  },
   settings: {
     'import/resolver': {
       node: {
@@ -21,18 +12,16 @@ module.exports = {
     'import/extensions': ['.ts', '.js']
   },
   plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'airbnb-base', 'plugin:@typescript-eslint/recommended'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'airbnb-base'],
   rules: {
     '@typescript-eslint/indent': ['error', 2],
     '@typescript-eslint/interface-name-prefix': ['error', 'always'],
     '@typescript-eslint/no-explicit-any': ['off'],
     '@typescript-eslint/explicit-function-return-type': ['off'],
-    'comma-dangle': ['error', 'never'],
     'import/no-cycle': ['off'],
     'import/prefer-default-export': ['off'],
-    'linebreak-style': ['off', 'error', 'windows'],
+    'linebreak-style': ['off'],
     'max-len': ['error', 200],
-    'no-console': ['off'],
-    'no-constant-condition': ['off']
+    'no-console': ['off']
   }
 };

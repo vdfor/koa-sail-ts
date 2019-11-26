@@ -8,10 +8,10 @@ const testApi: IApi[] = [
     prefix: '/api/v1',
     action: (ctx: RouterContext) => {
       ctx.body = {
-        title: 'Hello, Test!'
+        title: 'Hello, Test!',
       };
-    }
-  }
+    },
+  },
 ];
 
 export default testApi;

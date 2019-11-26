@@ -6,22 +6,22 @@ const prod = {
         type: 'file',
         filename: 'logs/log',
         maxLogSize: 20971520,
-        backups: 15
-      }
+        backups: 15,
+      },
     },
     categories: {
       default: {
         appenders: [
-          'sail'
+          'sail',
         ],
-        level: 'ALL'
-      }
-    }
+        level: 'ALL',
+      },
+    },
   },
   db: {},
   resource: '../views',
   port: 8181,
-  prefix: '/v0'
+  prefix: '/v0',
 };
 
 export default prod;

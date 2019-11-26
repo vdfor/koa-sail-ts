@@ -20,7 +20,7 @@ app.use(logging());
 // bodyparser
 app.use(bodyparser({
   // multipart: true,
-  enableTypes: ['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text'],
 }));
 
 // compress
@@ -30,7 +30,7 @@ app.use(compress({
     return /text|javascript|json/i.test(contentType);
   },
   threshold: 1024, // 大于1kb开启压缩
-  flush: zlib.Z_SYNC_FLUSH
+  flush: zlib.Z_SYNC_FLUSH,
 }));
 
 // cors

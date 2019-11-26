@@ -66,7 +66,7 @@ const wsListener = (server: http.Server) => {
         });
       });
     },
-    30000
+    30000,
   );
 };
 
