@@ -1,6 +1,7 @@
 # ignore lists
-src/
+dist/
 node_modules
 docs/
 test/
 logs/
+nodemon.json
