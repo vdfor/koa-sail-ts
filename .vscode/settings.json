@@ -1,15 +1,11 @@
 {
   "editor.tabSize": 2,
   "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    }
+    "javascript",
+    "typescript",
   ],
-  "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
